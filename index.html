@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROMPTING · Complete Interactive Masterclass</title>
+  <title>PROMPTING · Course, Quizzes & Interactive Lab</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -47,7 +47,7 @@
 </head>
 <body class="selection:bg-yellow-500/30 selection:text-yellow-200">
 
-  <!-- Glow Backdrop -->
+  <!-- Glow Background -->
   <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-amber-500/10 via-purple-500/5 to-transparent blur-[120px] pointer-events-none z-0"></div>
 
   <!-- Header -->
@@ -57,15 +57,16 @@
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-700 p-[1px] shadow-lg shadow-amber-500/20">
           <div class="w-full h-full bg-slate-900 rounded-[11px] flex items-center justify-center font-serif text-amber-400 font-bold text-xl">P</div>
         </div>
-        <span class="font-extrabold tracking-widest text-xs uppercase bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-slate-400">Prompting Studio</span>
+        <span class="font-extrabold tracking-widest text-xs uppercase bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-slate-400">Prompting Masterclass</span>
       </div>
       
-      <nav class="hidden md:flex items-center gap-6 text-xs font-semibold tracking-widest uppercase text-slate-400">
-        <a href="#theory" class="hover:text-amber-400 transition" data-tr="Teori & Tarih" data-en="Theory & History">Teori & Tarih</a>
-        <a href="#attention" class="hover:text-amber-400 transition" data-tr="Dikkat (Attention)" data-en="Attention">Dikkat (Attention)</a>
-        <a href="#sliders" class="hover:text-amber-400 transition" data-tr="İnteraktif Laboratuvar" data-en="Interactive Lab">İnteraktif Laboratuvar</a>
-        <a href="#studio" class="hover:text-amber-400 transition" data-tr="Canlı Stüdyo" data-en="Live Studio">Canlı Stüdyo</a>
-        <a href="#quiz" class="hover:text-amber-400 transition" data-tr="Test" data-en="Quiz">Test</a>
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold tracking-widest uppercase text-slate-400">
+        <a href="#history" class="hover:text-amber-400 transition" data-tr="01. Tarihçe" data-en="01. History">01. Tarihçe</a>
+        <a href="#attention" class="hover:text-amber-400 transition" data-tr="02. Attention" data-en="02. Attention">02. Attention</a>
+        <a href="#transformer" class="hover:text-amber-400 transition" data-tr="03. Transformer & GPT" data-en="03. Transformer & GPT">03. Transformer & GPT</a>
+        <a href="#prompt-design" class="hover:text-amber-400 transition" data-tr="04. Prompt Tasarımı" data-en="04. Prompt Design">04. Prompt Tasarımı</a>
+        <a href="#limits" class="hover:text-amber-400 transition" data-tr="05. Sınırlamalar" data-en="05. Limitations">05. Sınırlamalar</a>
+        <a href="#lab" class="hover:text-amber-400 transition" data-tr="İnteraktif Lab" data-en="Interactive Lab">İnteraktif Lab</a>
       </nav>
 
       <!-- Language & Theme Controls -->
@@ -85,239 +86,344 @@
     <div class="max-w-4xl mx-auto space-y-6">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-amber-500/30 bg-amber-500/5 text-amber-500 text-xs tracking-widest uppercase font-semibold">
         <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-        <span data-tr="Eksiksiz Eğitim & İnteraktif Laboratuvar" data-en="Complete Education & Interactive Lab">Eksiksiz Eğitim & İnteraktif Laboratuvar</span>
+        <span data-tr="Kapsamlı Ders Anlatımı & Bölüm İçi Sınavlar" data-en="Comprehensive Course & Chapter Quizzes">Kapsamlı Ders Anlatımı & Bölüm İçi Sınavlar</span>
       </div>
       <h1 class="text-4xl sm:text-6xl font-serif font-bold text-white leading-tight">
-        <span data-tr="Prompt Mühendisliği & LLM Mimarisi" data-en="Prompt Engineering & LLM Architecture">Prompt Mühendisliği & LLM Mimarisi</span> <br>
-        <span class="gold-gradient" data-tr="Teorik Temeller ve Etkileşimli Simülatör" data-en="Theoretical Foundations & Interactive Simulator">Teorik Temeller ve Etkileşimli Simülatör</span>
+        <span data-tr="Prompt Mühendisliğine Giriş" data-en="Introduction to Prompt Engineering">Prompt Mühendisliğine Giriş</span> <br>
+        <span class="gold-gradient" data-tr="Dil Modelleri, Attention ve Mimari" data-en="Language Models, Attention & Architecture">Dil Modelleri, Attention ve Mimari</span>
       </h1>
-      <p class="text-slate-400 text-base sm:text-lg font-light max-w-2xl mx-auto" data-tr="Sekans modellerinden Transformer ve GPT mimarisine, attention mekanizmasından gelişmiş prompt tekniklerine kadar her şeyi etkileşimli araçlarla öğrenin." data-en="Master everything from sequence models, Transformers, and GPT to attention mechanisms and advanced prompt engineering through interactive tools.">
-        Sekans modellerinden Transformer ve GPT mimarisine, attention mekanizmasından gelişmiş prompt tekniklerine kadar her şeyi etkileşimli araçlarla öğrenin.
+      <p class="text-slate-400 text-base sm:text-lg font-light max-w-2xl mx-auto" data-tr="Bir dil modeli aldığı girdiyi devam ettirir. Prompt mühendisliği ise bu devam ettirme işlemini yararlı, ilgili ve güvenilir bir çıktıya dönüştürür." data-en="A language model continues the text it receives. Prompt engineering shapes that continuation into something useful, relevant, and reliable.">
+        Bir dil modeli aldığı girdiyi devam ettirir. Prompt mühendisliği ise bu devam ettirme işlemini yararlı, ilgili ve güvenilir bir çıktıya dönüştürür.
       </p>
     </div>
   </section>
 
-  <main class="max-w-7xl mx-auto px-6 py-8 space-y-20 relative z-10">
+  <main class="max-w-6xl mx-auto px-6 py-8 space-y-24 relative z-10">
 
-    <!-- THEORY SECTION: HISTORY & EVOLUTION -->
-    <section id="theory" class="space-y-8">
+    <!-- CHAPTER 01: HISTORY & EVOLUTION -->
+    <section id="history" class="space-y-8 scroll-mt-24">
       <div class="border-l-4 border-amber-500 pl-4">
-        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest" data-tr="01 / Tarihsel Gelişim" data-en="01 / Evolution">01 / Tarihsel Gelişim</span>
-        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-1" data-tr="Dil Modelleri Nasıl Gelişti?" data-en="How Language Models Evolved">Dil Modelleri Nasıl Gelişti?</h2>
+        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest" data-tr="Bölüm 01 / Geçmişten Günümüze" data-en="Chapter 01 / History & Origins">Bölüm 01 / Geçmişten Günümüze</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-1" data-tr="Buraya Nasıl Geldik?" data-en="How Did We Get Here?">Buraya Nasıl Geldik?</h2>
       </div>
+      <p class="text-slate-400 text-sm leading-relaxed" data-tr="Modern yapay zeka asistanları, bağlamın (context) temsil edilmesi ve işlenmesinde yaşanan kademeli gelişmelerin bir sonucudur." data-en="Modern AI assistants grew out of successive ways to represent and process context efficiently.">
+        Modern yapay zeka asistanları, bağlamın (context) temsil edilmesi ve işlenmesinde yaşanan kademeli gelişmelerin bir sonucudur.
+      </p>
 
       <div class="grid md:grid-cols-3 gap-6">
         <div class="glass-card p-6 rounded-2xl space-y-3">
-          <span class="text-xs font-mono text-amber-400 font-bold">1940s+ · Markov & İstatistik</span>
+          <span class="text-xs font-mono text-amber-400 font-bold">1940s+ · Markov İstatistiği</span>
           <h3 class="text-lg font-bold text-white" data-tr="İstatistiksel Modeller" data-en="Statistical Models">İstatistiksel Modeller</h3>
-          <p class="text-slate-400 text-xs font-light leading-relaxed" data-tr="Metin tahmini yalnızca son birkaç kelimeye dayalı olasılık hesaplarıyla yapılıyordu. Bağlam oldukça sınırlıydı." data-en="Text prediction relied on simple probabilities from immediately preceding words with strictly limited context.">
-            Metin tahmini yalnızca son birkaç kelimeye dayalı olasılık hesaplarıyla yapılıyordu. Bağlam oldukça sınırlıydı.
+          <p class="text-slate-400 text-xs font-light leading-relaxed" data-tr="Metin tahmini yalnızca hemen öncesindeki birkaç kelimeye dayalı Markov olasılıklarıyla yapılıyordu." data-en="Markov-style approaches predicted text from a strictly limited preceding context window.">
+            Metin tahmini yalnızca hemen öncesindeki birkaç kelimeye dayalı Markov olasılıklarıyla yapılıyordu.
           </p>
         </div>
 
         <div class="glass-card p-6 rounded-2xl space-y-3">
           <span class="text-xs font-mono text-amber-400 font-bold">2014-2015 · Seq2Seq & RNN</span>
-          <h3 class="text-lg font-bold text-white" data-tr="Encoder-Decoder Dönemi" data-en="Encoder-Decoder Era">Encoder-Decoder Dönemi</h3>
-          <p class="text-slate-400 text-xs font-light leading-relaxed" data-tr="Cümlelerin tümü tek bir 'düşünce vektörüne' (thought vector) sıkıştırılıyordu. Uzun cümlelerde bilgi kaybı yaşanıyordu." data-en="Sequences were compressed into a single fixed thought vector, creating severe context bottlenecks in longer texts.">
-            Cümlelerin tümü tek bir 'düşünce vektörüne' (thought vector) sıkıştırılıyordu. Uzun cümlelerde bilgi kaybı yaşanıyordu.
+          <h3 class="text-lg font-bold text-white" data-tr="Encoder-Decoder Modelleri" data-en="Encoder-Decoder Models">Encoder-Decoder Modelleri</h3>
+          <p class="text-slate-400 text-xs font-light leading-relaxed" data-tr="Tüm girdi sekansı tek bir 'düşünce vektörüne' (thought vector) sıkıştırılıyordu. Uzun cümlelerde bilgi kayboluyordu." data-en="An encoder compressed entire input sequences into a single thought vector, causing severe context bottlenecks.">
+            Tüm girdi sekansı tek bir 'düşünce vektörüne' (thought vector) sıkıştırılıyordu. Uzun cümlelerde bilgi kayboluyordu.
           </p>
         </div>
 
         <div class="glass-card p-6 rounded-2xl space-y-3">
           <span class="text-xs font-mono text-amber-400 font-bold">2017+ · Transformer & GPT</span>
-          <h3 class="text-lg font-bold text-white" data-tr="Attention & GPT Çağı" data-en="Attention & GPT Era">Attention & GPT Çağı</h3>
-          <p class="text-slate-400 text-xs font-light leading-relaxed" data-tr="Attention sayesinde model, cümlenin her konumundaki kelimelere dinamik ağırlık verir. GPT modelleri autoregressive olarak sonraki token'ı tahmin eder." data-en="Attention layers allowed dynamic weighting across positions. Autoregressive GPT models predict the next token continuously.">
-            Attention sayesinde model, cümlenin her konumundaki kelimelere dinamik ağırlık verir. GPT modelleri autoregressive olarak sonraki token'ı tahmin eder.
+          <h3 class="text-lg font-bold text-white" data-tr="Attention ve GPT Çağı" data-en="Attention & GPT Era">Attention ve GPT Çağı</h3>
+          <p class="text-slate-400 text-xs font-light leading-relaxed" data-tr="Attention mekanizması ile model tüm kelimelere dinamik ağırlık verir. GPT ile metin üretimi genel amaçlı hale geldi." data-en="Attention allowed direct consulting of all sequence tokens. GPT models transformed prompting into a practical interface.">
+            Attention mekanizması ile model tüm kelimelere dinamik ağırlık verir. GPT ile metin üretimi genel amaçlı hale geldi.
           </p>
         </div>
       </div>
+
+      <!-- QUIZ 1 -->
+      <div class="p-6 bg-slate-900/80 rounded-2xl border border-amber-500/20 space-y-4">
+        <div class="flex items-center gap-2 text-xs font-mono text-amber-400 font-bold uppercase">
+          <span>📝 Bölüm 1 Sınavı:</span>
+        </div>
+        <p class="text-xs text-slate-300" data-tr="Geleneksel Seq2Seq modellerinde uzun cümlelerde bilgi kaybı yaşanmasının temel sebebi nedir?" data-en="What was the main reason for information loss in long sentences in traditional Seq2Seq models?">
+          Geleneksel Seq2Seq modellerinde uzun cümlelerde bilgi kaybı yaşanmasının temel sebebi nedir?
+        </p>
+        <div class="grid sm:grid-cols-2 gap-3" id="q1Container">
+          <button onclick="checkAnswer(1, true, this)" class="p-3 text-left bg-slate-950 border border-white/10 rounded-xl text-xs hover:border-amber-500 transition text-slate-300" data-tr="Tüm girdiyi tek bir sabit boyutlu vektöre sıkıştırma zorunluluğu" data-en="Compressing all input into a single fixed vector">Tüm girdiyi tek bir sabit boyutlu vektöre sıkıştırma zorunluluğu</button>
+          <button onclick="checkAnswer(1, false, this)" class="p-3 text-left bg-slate-950 border border-white/10 rounded-xl text-xs hover:border-amber-500 transition text-slate-300" data-tr="Modellerin sadece sayıları işleyebilmesi" data-en="Models only processing numbers">Modellerin sadece sayıları işleyebilmesi</button>
+        </div>
+        <div id="q1Feedback" class="text-xs font-mono"></div>
+      </div>
     </section>
 
-    <!-- ATTENTION WEIGHTS INTERACTIVE VISUALIZER -->
-    <section id="attention" class="space-y-6">
+    <!-- CHAPTER 02: THE ATTENTION BOTTLENECK -->
+    <section id="attention" class="space-y-8 scroll-mt-24">
       <div class="border-l-4 border-amber-500 pl-4">
-        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest" data-tr="02 / Görselleştirme" data-en="02 / Visualizer">02 / Görselleştirme</span>
-        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-1" data-tr="Self-Attention Mekanizması Nasıl Çalışır?" data-en="How Self-Attention Works">Self-Attention Mekanizması Nasıl Çalışır?</h2>
+        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest" data-tr="Bölüm 02 / Darboğazı Aşmak" data-en="Chapter 02 / The Bottleneck">Bölüm 02 / Darboğazı Aşmak</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-1" data-tr="Bir Cümle Tek Bir Vektör Değildir" data-en="A Sentence is Not a Single Vector">Bir Cümle Tek Bir Vektör Değildir</h2>
       </div>
 
       <div class="glass-card p-6 sm:p-8 rounded-3xl space-y-6">
-        <p class="text-slate-400 text-sm" data-tr="Aşağıdaki cümledeki kelimelerin üzerine tıklayarak modelin hangi kelimeye ne kadar ağırlık verdiğini (attention weight) görün:" data-en="Click any word below to inspect simulated self-attention weights assigned across the sentence:">
-          Aşağıdaki cümledeki kelimelerin üzerine tıklayarak modelin hangi kelimeye ne kadar ağırlık verdiğini (attention weight) görün:
+        <p class="text-slate-300 text-sm leading-relaxed" data-tr="İlk çeviri sistemleri tüm metni tek bir sabit vektöre sıkıştırmaya çalışıyordu (Thought Vector). Ancak bir paragraf dolusu isim ve ilişki tek bir özete sığamazdı. Attention (Dikkat) mekanizması bu darboğazı çözdü:" data-en="Early translation systems squeezed entire inputs into fixed-size representations. Paragraphs with complex facts lost details. Attention solved this bottleneck by allowing the decoder to weight source tokens dynamically.">
+          İlk çeviri sistemleri tüm metni tek bir sabit vektöre sıkıştırmaya çalışıyordu (Thought Vector). Ancak bir paragraf dolusu isim ve ilişki tek bir özete sığamazdı. Attention (Dikkat) mekanizması bu darboğazı çözdü:
         </p>
 
-        <div id="tokenContainer" class="flex flex-wrap gap-3">
-          <!-- JS Interactive Tokens -->
+        <!-- Interactive Attention Word Selector -->
+        <div class="space-y-4">
+          <span class="text-xs font-mono text-amber-400 uppercase font-bold" data-tr="İnteraktif Dikkat Ağırlığı Analizi (Tıklayın):" data-en="Interactive Attention Weight Analysis (Click words):">İnteraktif Dikkat Ağırlığı Analizi (Tıklayın):</span>
+          <div id="tokenContainer" class="flex flex-wrap gap-3">
+            <!-- JS Interactive Tokens -->
+          </div>
+          <div class="p-4 bg-slate-900/90 rounded-xl border border-white/10 text-xs font-mono text-amber-300">
+            <span id="attentionDesc">Bir kelimeye tıklayarak ağırlık dağılımını görün.</span>
+          </div>
         </div>
+      </div>
 
-        <div class="p-4 bg-slate-900/90 rounded-xl border border-white/10 text-xs font-mono space-y-2">
-          <div class="text-slate-400 uppercase text-[10px] font-bold" data-tr="Dikkat Dağılımı Analizi:" data-en="Attention Weight Analysis:">Dikkat Dağılımı Analizi:</div>
-          <p id="attentionDesc" class="text-amber-300 font-sans text-sm">Bir kelimeye tıklayarak ağırlık analizini başlatın.</p>
+      <!-- QUIZ 2 -->
+      <div class="p-6 bg-slate-900/80 rounded-2xl border border-amber-500/20 space-y-4">
+        <div class="flex items-center gap-2 text-xs font-mono text-amber-400 font-bold uppercase">
+          <span>📝 Bölüm 2 Sınavı:</span>
         </div>
+        <p class="text-xs text-slate-300" data-tr="Attention mekanizması çalıştığında model ne yapar?" data-en="What does the model do when the Attention mechanism runs?">
+          Attention mekanizması çalıştığında model ne yapar?
+        </p>
+        <div class="grid sm:grid-cols-2 gap-3" id="q2Container">
+          <button onclick="checkAnswer(2, true, this)" class="p-3 text-left bg-slate-950 border border-white/10 rounded-xl text-xs hover:border-amber-500 transition text-slate-300" data-tr="Üretilen her yeni kelime için girdi metnindeki ilgili kelimelere dinamik ağırlık verir" data-en="Dynamically weights relevant source words for each generated token">Üretilen her yeni kelime için girdi metnindeki ilgili kelimelere dinamik ağırlık verir</button>
+          <button onclick="checkAnswer(2, false, this)" class="p-3 text-left bg-slate-950 border border-white/10 rounded-xl text-xs hover:border-amber-500 transition text-slate-300" data-tr="Tüm kelimeleri alfabeye göre sıralar" data-en="Sorts all words alphabetically">Tüm kelimeleri alfabeye göre sıralar</button>
+        </div>
+        <div id="q2Feedback" class="text-xs font-mono"></div>
       </div>
     </section>
 
-    <!-- INTERACTIVE SLIDERS SECTION -->
-    <section id="sliders" class="space-y-8">
+    <!-- CHAPTER 03: TRANSFORMER & GPT ARCHITECTURE -->
+    <section id="transformer" class="space-y-8 scroll-mt-24">
       <div class="border-l-4 border-amber-500 pl-4">
-        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest" data-tr="03 / İnteraktif Simülatörler" data-en="03 / Interactive Simulators">03 / İnteraktif Simülatörler</span>
-        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-1" data-tr="LLM Parametre & Dinamik Sürgüleri" data-en="LLM Dynamic Parameter Sliders">LLM Parametre & Dinamik Sürgüleri</h2>
+        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest" data-tr="Bölüm 03 / Mimari" data-en="Chapter 03 / Architecture">Bölüm 03 / Mimari</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-1" data-tr="Transformer & GPT Nedir?" data-en="What is Transformer & GPT?">Transformer & GPT Nedir?</h2>
       </div>
 
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl border-t-2 border-amber-500">
+          <span class="text-2xl font-bold font-serif text-amber-400">G</span>
+          <h3 class="text-base font-bold text-white mt-2" data-tr="Generative (Üretken)" data-en="Generative">Generative (Üretken)</h3>
+          <p class="text-slate-400 text-xs mt-2" data-tr="Sadece var olan metni sınıflandırmaz, yeni içerik ve metin üretir." data-en="Generates new plausible text content rather than just classifying input.">
+            Sadece var olan metni sınıflandırmaz, yeni içerik ve metin üretir.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border-t-2 border-amber-500">
+          <span class="text-2xl font-bold font-serif text-amber-400">P</span>
+          <h3 class="text-base font-bold text-white mt-2" data-tr="Pre-trained (Ön Eğitimli)" data-en="Pre-trained">Pre-trained (Ön Eğitimli)</h3>
+          <p class="text-slate-400 text-xs mt-2" data-tr="Devasa veri kümeleri üzerinde önceden eğitilerek genel dil örüntülerini öğrenir." data-en="Learns broad language patterns from vast datasets before task adaptation.">
+            Devasa veri kümeleri üzerinde önceden eğitilerek genel dil örüntülerini öğrenir.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border-t-2 border-amber-500">
+          <span class="text-2xl font-bold font-serif text-amber-400">T</span>
+          <h3 class="text-base font-bold text-white mt-2" data-tr="Transformer" data-en="Transformer">Transformer</h3>
+          <p class="text-slate-400 text-xs mt-2" data-tr="Attention katmanlarını kullanarak kelimeler arası ilişkileri paralel şekilde işler." data-en="Uses self-attention layers to process positional relationships in parallel.">
+            Attention katmanlarını kullanarak kelimeler arası ilişkileri paralel şekilde işler.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-6 bg-slate-900/90 rounded-2xl border border-white/10 text-center font-mono text-sm sm:text-base text-amber-400">
+        P(t<sub>n+1</sub> | t<sub>1</sub>, t<sub>2</sub>, …, t<sub>n</sub>)
+        <p class="text-xs text-slate-400 font-sans mt-2" data-tr="Autoregressive Mantık: Verilen token sekansına göre bir sonraki kelimenin olasılık dağılımını hesaplar." data-en="Autoregressive Logic: Estimates the probability distribution for the next token given all preceding tokens.">
+          Autoregressive Mantık: Verilen token sekansına göre bir sonraki kelimenin olasılık dağılımını hesaplar.
+        </p>
+      </div>
+
+      <!-- QUIZ 3 -->
+      <div class="p-6 bg-slate-900/80 rounded-2xl border border-amber-500/20 space-y-4">
+        <div class="flex items-center gap-2 text-xs font-mono text-amber-400 font-bold uppercase">
+          <span>📝 Bölüm 3 Sınavı:</span>
+        </div>
+        <p class="text-xs text-slate-300" data-tr="GPT modellerinin metin üretirken izlediği 'Autoregressive' süreç ne anlama gelir?" data-en="What does the 'Autoregressive' process followed by GPT models mean?">
+          GPT modellerinin metin üretirken izlediği 'Autoregressive' süreç ne anlama gelir?
+        </p>
+        <div class="grid sm:grid-cols-2 gap-3" id="q3Container">
+          <button onclick="checkAnswer(3, true, this)" class="p-3 text-left bg-slate-950 border border-white/10 rounded-xl text-xs hover:border-amber-500 transition text-slate-300" data-tr="Bir sonraki token'ı tahmin edip sekansa ekleyerek adımları tekrarlamak" data-en="Predicting the next token, appending it, and repeating iteratively">Bir sonraki token'ı tahmin edip sekansa ekleyerek adımları tekrarlamak</button>
+          <button onclick="checkAnswer(3, false, this)" class="p-3 text-left bg-slate-950 border border-white/10 rounded-xl text-xs hover:border-amber-500 transition text-slate-300" data-tr="Metni tersten başlayarak okumak" data-en="Reading text backward from the end">Metni tersten başlayarak okumak</button>
+        </div>
+        <div id="q3Feedback" class="text-xs font-mono"></div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 04: PROMPT DESIGN PRINCIPLES -->
+    <section id="prompt-design" class="space-y-8 scroll-mt-24">
+      <div class="border-l-4 border-amber-500 pl-4">
+        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest" data-tr="Bölüm 04 / Uygulama" data-en="Chapter 04 / Prompt Design">Bölüm 04 / Uygulama</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-1" data-tr="Prompt Tasarımı: Bir Sorudan Daha Fazlası" data-en="Designing Prompts: More Than a Question">Prompt Tasarımı: Bir Sorudan Daha Fazlası</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-rose-500">
+          <span class="text-xs font-mono text-rose-400 font-bold uppercase" data-tr="Zayıf / Belirsiz Prompt" data-en="Vague Request">Zayıf / Belirsiz Prompt</span>
+          <p class="text-white font-mono text-sm mt-3">"Transformers mimarisini anlat."</p>
+          <p class="text-slate-400 text-xs mt-3" data-tr="Hedef kitle, format ve kısıtlamalar belli değildir. Yanıtın kalitesi tesadüfe kalır." data-en="Lacks target audience, format, and boundaries. Result is unguided.">
+            Hedef kitle, format ve kısıtlamalar belli değildir. Yanıtın kalitesi tesadüfe kalır.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-emerald-500">
+          <span class="text-xs font-mono text-emerald-400 font-bold uppercase" data-tr="İyi Tasarlanmış Prompt" data-en="Designed Request">İyi Tasarlanmış Prompt</span>
+          <p class="text-emerald-300 font-mono text-xs mt-3 leading-relaxed">
+            [ROL] Kıdemli YZ Mimarı.<br>
+            [GÖREV] Transformers mimarisini 1. sınıf öğrencilerine açıkla.<br>
+            [FORMAT] 3 madde, 1 karşılaştırma tablosu.<br>
+            [KISITLAMA] Max 150 kelime.
+          </p>
+          <p class="text-slate-400 text-xs mt-3" data-tr="Rol, görev, format ve kısıtlamalar nettir. İstenen yüksek kaliteli çıktı garanti edilir." data-en="Clear identity, audience, structure, and boundaries ensure high accuracy.">
+            Rol, görev, format ve kısıtlamalar nettir. İstenen yüksek kaliteli çıktı garanti edilir.
+          </p>
+        </div>
+      </div>
+
+      <!-- QUIZ 4 -->
+      <div class="p-6 bg-slate-900/80 rounded-2xl border border-amber-500/20 space-y-4">
+        <div class="flex items-center gap-2 text-xs font-mono text-amber-400 font-bold uppercase">
+          <span>📝 Bölüm 4 Sınavı:</span>
+        </div>
+        <p class="text-xs text-slate-300" data-tr="İyi mühendislik verilmiş bir prompt'ta aşağıdaki bileşenlerden hangisi yer almalıdır?" data-en="Which component should be included in a well-engineered prompt?">
+          İyi mühendislik verilmiş bir prompt'ta aşağıdaki bileşenlerden hangisi yer almalıdır?
+        </p>
+        <div class="grid sm:grid-cols-2 gap-3" id="q4Container">
+          <button onclick="checkAnswer(4, true, this)" class="p-3 text-left bg-slate-950 border border-white/10 rounded-xl text-xs hover:border-amber-500 transition text-slate-300" data-tr="Rol tanımlaması, hedef kitle, çıktı formatı ve kısıtlamalar" data-en="Persona role, objective, output format, and constraints">Rol tanımlaması, hedef kitle, çıktı formatı ve kısıtlamalar</button>
+          <button onclick="checkAnswer(4, false, this)" class="p-3 text-left bg-slate-950 border border-white/10 rounded-xl text-xs hover:border-amber-500 transition text-slate-300" data-tr="Sadece tek bir genel soru cümlesi" data-en="Only a single general question sentence">Sadece tek bir genel soru cümlesi</button>
+        </div>
+        <div id="q4Feedback" class="text-xs font-mono"></div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 05: THREE LIMITATIONS -->
+    <section id="limits" class="space-y-8 scroll-mt-24">
+      <div class="border-l-4 border-amber-500 pl-4">
+        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest" data-tr="Bölüm 05 / Gerçekler" data-en="Chapter 05 / Reality Check">Bölüm 05 / Gerçekler</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-1" data-tr="Unutulmaması Gereken 3 Sınırlama" data-en="Three Important Limitations">Unutulmaması Gereken 3 Sınırlama</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl border-t-4 border-amber-500">
+          <h3 class="text-base font-bold text-white" data-tr="1. Arama Motoru Değildir" data-en="1. Not a Search Engine">1. Arama Motoru Değildir</h3>
+          <p class="text-slate-400 text-xs mt-2 leading-relaxed" data-tr="Model doğrulama yapmadan mantıklı görünen ama yanlış bilgiler (Hallucination) üretebilir." data-en="Models generate plausible completions without built-in factual verification.">
+            Model doğrulama yapmadan mantıklı görünen ama yanlış bilgiler (Hallucination) üretebilir.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border-t-4 border-amber-500">
+          <h3 class="text-base font-bold text-white" data-tr="2. Sınırlı Bağlam Penceresi" data-en="2. Finite Context Limit">2. Sınırlı Bağlam Penceresi</h3>
+          <p class="text-slate-400 text-xs mt-2 leading-relaxed" data-tr="Desteklenen maksimum token sınırının ötesindeki bilgileri işleyemez ve unutabilir." data-en="Can only process text within its active supported context window limit.">
+            Desteklenen maksimum token sınırının ötesindeki bilgileri işleyemez ve unutabilir.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border-t-4 border-amber-500">
+          <h3 class="text-base font-bold text-white" data-tr="3. Akıcılık Doğruluk Demek Değildir" data-en="3. Fluency ≠ Accuracy">3. Akıcılık Doğruluk Demek Değildir</h3>
+          <p class="text-slate-400 text-xs mt-2 leading-relaxed" data-tr="Çok iyi yazılmış ve dilbilgisel olarak kusursuz bir yanıt mantıksal hatalar içerebilir." data-en="A beautifully phrased response can still contain fundamental logical errors.">
+            Çok iyi yazılmış ve dilbilgisel olarak kusursuz bir yanıt mantıksal hatalar içerebilir.
+          </p>
+        </div>
+      </div>
+
+      <!-- QUIZ 5 -->
+      <div class="p-6 bg-slate-900/80 rounded-2xl border border-amber-500/20 space-y-4">
+        <div class="flex items-center gap-2 text-xs font-mono text-amber-400 font-bold uppercase">
+          <span>📝 Bölüm 5 Sınavı:</span>
+        </div>
+        <p class="text-xs text-slate-300" data-tr="Dil modellerinde 'Hallucination' (Yanılsama) ne anlama gelir?" data-en="What does 'Hallucination' mean in language models?">
+          Dil modellerinde 'Hallucination' (Yanılsama) ne anlama gelir?
+        </p>
+        <div class="grid sm:grid-cols-2 gap-3" id="q5Container">
+          <button onclick="checkAnswer(5, true, this)" class="p-3 text-left bg-slate-950 border border-white/10 rounded-xl text-xs hover:border-amber-500 transition text-slate-300" data-tr="Modelin doğrulanamayan ama mantıklı görünen yanlış bilgi üretmesi" data-en="Model generating plausible-sounding but unverified false statements">Modelin doğrulanamayan ama mantıklı görünen yanlış bilgi üretmesi</button>
+          <button onclick="checkAnswer(5, false, this)" class="p-3 text-left bg-slate-950 border border-white/10 rounded-xl text-xs hover:border-amber-500 transition text-slate-300" data-tr="Modelin bilgisayarı aniden kapatması" data-en="Model shutting down the computer unexpectedly">Modelin bilgisayarı aniden kapatması</button>
+        </div>
+        <div id="q5Feedback" class="text-xs font-mono"></div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE LAB: SLIDERS & STUDIO -->
+    <section id="lab" class="space-y-12 scroll-mt-24 pt-8 border-t border-white/10">
+      <div class="border-l-4 border-amber-500 pl-4">
+        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest" data-tr="İnteraktif Laboratuvar" data-en="Interactive Lab">İnteraktif Laboratuvar</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-1" data-tr="Canlı Parametre Sürgüleri & Studio" data-en="Live Parameter Sliders & Studio">Canlı Parametre Sürgüleri & Studio</h2>
+      </div>
+
+      <!-- Sliders Grid -->
       <div class="grid lg:grid-cols-2 gap-8">
-        
-        <!-- Slider 1: Context Length vs Attention Retention -->
-        <div class="glass-card p-6 sm:p-8 rounded-3xl space-y-6">
+        <!-- Slider 1 -->
+        <div class="glass-card p-6 rounded-3xl space-y-6">
           <div class="flex justify-between items-center">
-            <h3 class="text-lg font-bold text-white" data-tr="1. Bağlam Boyutu (Context) vs. Dikkat" data-en="1. Context Window vs. Attention">1. Bağlam Boyutu (Context) vs. Dikkat</h3>
+            <h3 class="text-base font-bold text-white" data-tr="Context Boyutu vs Dikkat Kaybı" data-en="Context Size vs Attention Retention">Context Boyutu vs Dikkat Kaybı</h3>
             <span class="text-xs font-mono bg-amber-500/20 text-amber-400 px-3 py-1 rounded-full border border-amber-500/30" id="tokenVal">4,000 Token</span>
           </div>
-          <p class="text-slate-400 text-sm" data-tr="Girdi boyutu büyüdükçe modelin dikkat kaybını ve bilgi unutma oranını (Needle in a Haystack) canlı olarak görün." data-en="Slide to increase context size and observe information degradation across large context windows.">
-            Girdi boyutu büyüdükçe modelin dikkat kaybını ve bilgi unutma oranını canlı olarak görün.
-          </p>
-
           <input type="range" id="tokenSlider" min="1000" max="32000" step="1000" value="4000" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
-
           <div class="space-y-2">
             <div class="flex justify-between text-xs font-mono text-slate-400">
-              <span data-tr="Dikkat Tutma İndeksi" data-en="Attention Retention Index">Dikkat Tutma İndeksi</span>
+              <span data-tr="Dikkat Tutma Oranı" data-en="Attention Retention">Dikkat Tutma Oranı</span>
               <span id="retentionVal" class="text-amber-400 font-bold">92%</span>
             </div>
-            <div class="w-full h-4 bg-slate-900 rounded-full overflow-hidden p-[2px] border border-white/10">
+            <div class="w-full h-3 bg-slate-900 rounded-full overflow-hidden p-[2px] border border-white/10">
               <div id="retentionBar" class="h-full bg-gradient-to-r from-emerald-500 to-amber-500 rounded-full transition-all duration-300" style="width: 92%;"></div>
             </div>
           </div>
-
-          <div class="p-4 bg-slate-900/90 rounded-xl border border-white/10 text-xs font-mono text-slate-300" id="contextDesc">
-            İdeal bağlam boyutu. Yüksek doğrulukta bilgi getirme performansı.
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-white/10 text-xs font-mono text-slate-300" id="contextDesc">
+            İdeal bağlam boyutu. Yüksek doğruluk.
           </div>
         </div>
 
-        <!-- Slider 2: Temperature & Creativity -->
-        <div class="glass-card p-6 sm:p-8 rounded-3xl space-y-6">
+        <!-- Slider 2 -->
+        <div class="glass-card p-6 rounded-3xl space-y-6">
           <div class="flex justify-between items-center">
-            <h3 class="text-lg font-bold text-white" data-tr="2. Sıcaklık Parametresi (Temperature)" data-en="2. Temperature (Creativity)">2. Sıcaklık Parametresi (Temperature)</h3>
+            <h3 class="text-base font-bold text-white" data-tr="Temperature (Sıcaklık / Yaratıcılık)" data-en="Temperature (Creativity)">Temperature (Sıcaklık / Yaratıcılık)</h3>
             <span class="text-xs font-mono bg-amber-500/20 text-amber-400 px-3 py-1 rounded-full border border-amber-500/30" id="tempVal">0.2</span>
           </div>
-          <p class="text-slate-400 text-sm" data-tr="Rastgeleliği ayarlayın. Düşük sıcaklık net ve kesin cevaplar, yüksek sıcaklık ise yaratıcı çıktılar üretir." data-en="Adjust randomness. Low temp gives deterministic answers; high temp produces creative text.">
-            Rastgeleliği ayarlayın. Düşük sıcaklık net ve kesin cevaplar, yüksek sıcaklık ise yaratıcı çıktılar üretir.
-          </p>
-
           <input type="range" id="tempSlider" min="0" max="1" step="0.1" value="0.2" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
-
-          <div class="p-4 bg-slate-900/90 rounded-xl border border-white/10 text-xs font-mono space-y-2">
-            <div class="text-slate-400 uppercase text-[10px] font-bold" data-tr="Örnek Model Yanıtı:" data-en="Sample Model Output:">Örnek Model Yanıtı:</div>
-            <div id="tempSample" class="text-amber-300">
-              "Fransa'nın başkenti Paris'tir. Ülkenin finans ve kültür merkezidir."
-            </div>
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-white/10 text-xs font-mono space-y-1">
+            <div id="tempSample" class="text-amber-300">"Fransa'nın başkenti Paris'tir."</div>
           </div>
-
-          <div class="text-xs text-slate-400 font-mono" id="tempUsage">
-            Kullanım alanı: Kod yazımı, Matematik, Kesin Bilgi Çıkarımı.
-          </div>
+          <div class="text-xs text-slate-400 font-mono" id="tempUsage">Kod yazımı ve Matematik için idealdir.</div>
         </div>
-
       </div>
 
-      <!-- Slider 3: Comparison Slider -->
+      <!-- Live Studio -->
       <div class="glass-card p-6 sm:p-8 rounded-3xl space-y-6">
-        <div class="flex justify-between items-center">
-          <div>
-            <h3 class="text-lg font-bold text-white" data-tr="3. Prompt Kalite Spektrumu" data-en="3. Prompt Quality Spectrum">3. Prompt Kalite Spektrumu</h3>
-            <p class="text-slate-400 text-sm mt-1" data-tr="Sürgüyü çekerek basit bir prompt ile mühendislik verilmiş master prompt farkını görün." data-en="Slide to compare a basic prompt versus an engineered master prompt.">Sürgüyü çekerek basit bir prompt ile mühendislik verilmiş master prompt farkını görün.</p>
-          </div>
-          <span class="text-xs font-mono bg-amber-500/20 text-amber-400 px-3 py-1 rounded-full border border-amber-500/30" id="qualityLabel">Seviye: Mühendislik Verilmiş</span>
-        </div>
-
-        <input type="range" id="qualitySlider" min="0" max="100" value="100" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
-
-        <div class="bg-black/90 p-6 rounded-2xl border border-white/10 font-mono text-sm leading-relaxed" id="qualityOutput">
-        </div>
-      </div>
-    </section>
-
-    <!-- LIVE PROMPT STUDIO WITH TABBED PREVIEW -->
-    <section id="studio" class="space-y-8">
-      <div class="border-l-4 border-amber-500 pl-4">
-        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest" data-tr="04 / Canlı Editör" data-en="04 / Live Studio">04 / Canlı Editör</span>
-        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-1" data-tr="Prompt Builder & Canlı Ön İzleme" data-en="Prompt Builder & Live Preview Studio">Prompt Builder & Canlı Ön İzleme</h2>
-      </div>
-
-      <div class="glass-card p-6 sm:p-8 rounded-3xl grid lg:grid-cols-2 gap-8">
-        <!-- Controls -->
-        <div class="space-y-6">
-          <div>
-            <label class="block text-xs font-mono uppercase text-amber-400 mb-2" data-tr="Sistem Rolü (Persona)" data-en="Role / System Context">Sistem Rolü (Persona)</label>
-            <input type="text" id="roleInput" value="Kıdemli Yapay Zeka Mimarı olarak hareket et." class="w-full input-bg border rounded-xl p-4 text-sm focus:outline-none focus:border-amber-500 transition">
-          </div>
-          <div>
-            <label class="block text-xs font-mono uppercase text-amber-400 mb-2" data-tr="Görev / Amaç" data-en="Objective / Task">Görev / Amaç</label>
-            <textarea id="taskInput" rows="3" class="w-full input-bg border rounded-xl p-4 text-sm focus:outline-none focus:border-amber-500 transition">Transformers mimarisindeki Attention mekanizmasını açıkla.</textarea>
-          </div>
-          <div>
-            <label class="block text-xs font-mono uppercase text-amber-400 mb-2" data-tr="Kısıtlamalar & Format" data-en="Strict Constraints & Format">Kısıtlamalar & Format</label>
-            <input type="text" id="constraintInput" value="3 madde halinde, teknik terim içermeyen anlatım, max 120 kelime." class="w-full input-bg border rounded-xl p-4 text-sm focus:outline-none focus:border-amber-500 transition">
-          </div>
-        </div>
-
-        <!-- Studio Right Column: Tabs -->
-        <div class="flex flex-col h-full">
-          <div class="flex items-center justify-between bg-slate-900 border border-white/10 px-4 py-2 rounded-t-xl">
-            <div class="flex gap-2">
-              <button onclick="switchTab('code')" id="tabCodeBtn" class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-amber-500 text-slate-950">
-                📄 Prompt Kodu
-              </button>
-              <button onclick="switchTab('preview')" id="tabPreviewBtn" class="px-3 py-1 rounded-md text-xs font-mono font-bold text-slate-400 hover:text-white">
-                ✨ Yapay Zeka Ön İzlemesi
-              </button>
+        <h3 class="text-xl font-bold text-white" data-tr="Canlı Prompt Studio & Yapay Zeka Simulation" data-en="Live Prompt Studio & AI Simulation">Canlı Prompt Studio & Yapay Zeka Simulation</h3>
+        
+        <div class="grid lg:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-mono uppercase text-amber-400 mb-1" data-tr="Sistem Rolü" data-en="System Role">Sistem Rolü</label>
+              <input type="text" id="roleInput" value="Kıdemli Yapay Zeka Mimarı olarak hareket et." class="w-full input-bg border rounded-xl p-3 text-xs focus:outline-none focus:border-amber-500">
             </div>
-            <span class="text-[10px] font-mono text-slate-500">Live Simulator v3.5</span>
-          </div>
-          
-          <div id="tabCode" class="flex-1 bg-black/90 border border-white/10 p-6 font-mono text-xs text-amber-300 leading-relaxed overflow-x-auto rounded-b-xl">
-          </div>
-
-          <div id="tabPreview" class="hidden flex-1 bg-slate-950 border border-white/10 p-6 text-sm text-slate-200 leading-relaxed rounded-b-xl overflow-y-auto space-y-4">
-            <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 border-b border-white/10 pb-2">
-              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-              <span data-tr="Simüle Edilmiş Model Çıktısı:" data-en="Simulated LLM Output:">Simüle Edilmiş Model Çıktısı:</span>
+            <div>
+              <label class="block text-xs font-mono uppercase text-amber-400 mb-1" data-tr="Görev" data-en="Task">Görev</label>
+              <textarea id="taskInput" rows="2" class="w-full input-bg border rounded-xl p-3 text-xs focus:outline-none focus:border-amber-500">Attention mekanizmasını 1. sınıf öğrencisine açıkla.</textarea>
             </div>
-            <div id="simulatedText" class="space-y-3 font-sans">
+            <div>
+              <label class="block text-xs font-mono uppercase text-amber-400 mb-1" data-tr="Kısıtlamalar" data-en="Constraints">Kısıtlamalar</label>
+              <input type="text" id="constraintInput" value="3 madde halinde, teknik terimsiz, max 100 kelime." class="w-full input-bg border rounded-xl p-3 text-xs focus:outline-none focus:border-amber-500">
             </div>
           </div>
 
-          <button onclick="copyPrompt()" class="mt-4 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-700 text-slate-950 font-bold text-xs uppercase tracking-widest hover:opacity-90 transition shadow-lg shadow-amber-500/20" data-tr="Prompt'u Kopyala" data-en="Copy Prompt">
-            Prompt'u Kopyala
-          </button>
+          <div class="flex flex-col h-full bg-black/90 rounded-2xl border border-white/10 p-5 font-mono text-xs text-amber-300 leading-relaxed justify-between">
+            <div id="tabCode"></div>
+            <button onclick="copyPrompt()" class="mt-4 py-3 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs uppercase hover:bg-amber-400 transition">
+              Prompt'u Kopyala
+            </button>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- KNOWLEDGE QUIZ SECTION -->
-    <section id="quiz" class="space-y-8">
-      <div class="border-l-4 border-amber-500 pl-4">
-        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest" data-tr="05 / Sınav" data-en="05 / Quiz">05 / Sınav</span>
-        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-1" data-tr="Hızlı Bilgi Testi" data-en="Knowledge Check Quiz">Hızlı Bilgi Testi</h2>
-      </div>
-
-      <div class="glass-card p-6 sm:p-8 rounded-3xl space-y-6">
-        <h3 id="quizQuestion" class="text-base sm:text-lg font-semibold text-white">1. Transformer mimarisi eski Seq2Seq modellerindeki hangi temel kısıtlamayı çözmüştür?</h3>
-        <div id="quizOptions" class="grid gap-3">
-          <!-- Quiz Options JS -->
-        </div>
-        <div id="quizFeedback" class="text-sm font-medium"></div>
-      </div>
     </section>
 
   </main>
 
   <footer class="border-t border-white/10 mt-20 py-8 text-center text-xs font-mono text-slate-500">
-    PROMPTING MASTERCLASS · EXECUTIVE EDITION
+    PROMPTING COURSE & LAB · EXECUTIVE EDITION
   </footer>
 
   <script>
     let currentLang = 'tr';
 
-    // Theme Switcher
     function toggleTheme() {
       const html = document.documentElement;
       const themeBtn = document.getElementById('themeBtn');
@@ -330,45 +436,37 @@
       }
     }
 
-    // Language Switcher
     function toggleLanguage() {
       currentLang = currentLang === 'tr' ? 'en' : 'tr';
       document.querySelectorAll('[data-tr]').forEach(el => {
         el.textContent = el.getAttribute(`data-${currentLang}`);
       });
-      updateQuality();
       updateStudio();
-      triggerSliderUpdates();
       renderTokens(2);
-      renderQuiz();
-    }
-
-    function triggerSliderUpdates() {
       tokenSlider.dispatchEvent(new Event('input'));
       tempSlider.dispatchEvent(new Event('input'));
     }
 
-    // Tab Switcher
-    function switchTab(tab) {
-      const codeTab = document.getElementById('tabCode');
-      const previewTab = document.getElementById('tabPreview');
-      const codeBtn = document.getElementById('tabCodeBtn');
-      const previewBtn = document.getElementById('tabPreviewBtn');
+    // Quiz Function
+    function checkAnswer(qNum, isCorrect, btn) {
+      const feedback = document.getElementById(`q${qNum}Feedback`);
+      const container = document.getElementById(`q${qNum}Container`);
+      const buttons = container.querySelectorAll('button');
 
-      if (tab === 'code') {
-        codeTab.classList.remove('hidden');
-        previewTab.classList.add('hidden');
-        codeBtn.className = "px-3 py-1 rounded-md text-xs font-mono font-bold bg-amber-500 text-slate-950";
-        previewBtn.className = "px-3 py-1 rounded-md text-xs font-mono font-bold text-slate-400 hover:text-white";
+      buttons.forEach(b => b.className = 'p-3 text-left bg-slate-950 border border-white/10 rounded-xl text-xs text-slate-400 opacity-60');
+
+      if (isCorrect) {
+        btn.className = 'p-3 text-left bg-emerald-500/20 border border-emerald-500 text-emerald-400 font-bold rounded-xl text-xs';
+        feedback.textContent = currentLang === 'tr' ? '✅ Doğru Cevap!' : '✅ Correct Answer!';
+        feedback.className = 'text-xs font-mono font-bold text-emerald-400 mt-2';
       } else {
-        codeTab.classList.add('hidden');
-        previewTab.classList.remove('hidden');
-        previewBtn.className = "px-3 py-1 rounded-md text-xs font-mono font-bold bg-amber-500 text-slate-950";
-        codeBtn.className = "px-3 py-1 rounded-md text-xs font-mono font-bold text-slate-400 hover:text-white";
+        btn.className = 'p-3 text-left bg-rose-500/20 border border-rose-500 text-rose-400 font-bold rounded-xl text-xs';
+        feedback.textContent = currentLang === 'tr' ? '❌ Yanlış Cevap. Tekrar deneyin.' : '❌ Incorrect. Try again.';
+        feedback.className = 'text-xs font-mono font-bold text-rose-400 mt-2';
       }
     }
 
-    // Interactive Attention Visualizer
+    // Tokens
     const tokens = ["The", "transformer", "architecture", "relies", "heavily", "on", "self-attention", "mechanisms."];
     const tokenContainer = document.getElementById('tokenContainer');
     const attentionDesc = document.getElementById('attentionDesc');
@@ -378,7 +476,7 @@
       tokens.forEach((token, idx) => {
         const btn = document.createElement('button');
         const isSelected = idx === selectedIndex;
-        btn.className = `px-3 py-2 rounded-lg text-xs font-mono transition border ${isSelected ? 'bg-amber-500 text-slate-950 border-amber-400 font-bold shadow-lg shadow-amber-500/20' : 'bg-slate-900 text-slate-300 border-white/10 hover:bg-slate-800'}`;
+        btn.className = `px-3 py-1.5 rounded-lg text-xs font-mono transition border ${isSelected ? 'bg-amber-500 text-slate-950 border-amber-400 font-bold shadow-lg shadow-amber-500/20' : 'bg-slate-900 text-slate-300 border-white/10 hover:bg-slate-800'}`;
         btn.textContent = token;
         btn.onclick = () => {
           renderTokens(idx);
@@ -390,23 +488,23 @@
 
     function updateAttentionText(idx) {
       const explanationsTR = [
-        "Cümlenin dilbilgisel başlangıç token'ı.",
-        "Ana özne token'ı; 'attention' ve 'mechanisms' sözcükleriyle yüksek korelasyon kurar.",
-        "Temel isim; 'transformer' ve 'self-attention' kavramlarıyla en yüksek ağırlığı paylaşır.",
+        "Cümlenin başlangıç token'ı.",
+        "Ana özne token'ı; 'attention' sözcüğüyle yüksek korelasyon kurar.",
+        "Temel isim; 'transformer' ve 'self-attention' ile ağırlık paylaşır.",
         "Model davranışını belirleyen eylem fiili.",
         "Bağımlılık derecesini vurgulayan zarf.",
         "Edat köprüsü.",
         "Değerlendirilen temel işlevsel mekanizma.",
-        "Sekans sonu işareti."
+        "Noktalama işareti."
       ];
       const explanationsEN = [
-        "Grammatical sequence start token.",
-        "Central subject token; heavily connects to 'attention' and 'mechanisms'.",
-        "Core structural noun; correlates strongly with 'transformer' and 'self-attention'.",
-        "Verb predicate defining model behavior.",
+        "Sequence start token.",
+        "Central subject token; connects to 'attention'.",
+        "Core structural noun; correlates with 'transformer'.",
+        "Verb predicate defining behavior.",
         "Adverbial modifier emphasizing dependency.",
         "Prepositional bridge.",
-        "Primary functional mechanism being evaluated.",
+        "Primary functional mechanism evaluated.",
         "End of sequence token."
       ];
       attentionDesc.textContent = currentLang === 'tr' 
@@ -416,7 +514,7 @@
     renderTokens(2);
     updateAttentionText(2);
 
-    // Slider 1: Tokens vs Attention
+    // Slider 1
     const tokenSlider = document.getElementById('tokenSlider');
     const tokenVal = document.getElementById('tokenVal');
     const retentionVal = document.getElementById('retentionVal');
@@ -432,17 +530,14 @@
 
       if (tokens < 8000) {
         contextDesc.textContent = currentLang === 'tr' ? "İdeal bağlam boyutu. Yüksek doğrulukta bilgi getirme performansı." : "Optimal context size. High precision retrieval.";
-        retentionBar.className = "h-full bg-gradient-to-r from-emerald-500 to-amber-500 rounded-full transition-all duration-300";
       } else if (tokens < 20000) {
-        contextDesc.textContent = currentLang === 'tr' ? "Orta seviye bağlam yükü. Bilginin ortada kaybolma riski başlar." : "Moderate context load. Minor risk of middle-context loss.";
-        retentionBar.className = "h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full transition-all duration-300";
+        contextDesc.textContent = currentLang === 'tr' ? "Orta seviye bağlam yükü. Bilginin ortada kaybolma riski başlar." : "Moderate context load. Risk of lost middle context.";
       } else {
-        contextDesc.textContent = currentLang === 'tr' ? "Aşırı bağlam yükü. Yanılsama (hallucination) veya ayrıntı kaçırma riski yüksek." : "Heavy context load. High risk of missing details.";
-        retentionBar.className = "h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full transition-all duration-300";
+        contextDesc.textContent = currentLang === 'tr' ? "Aşırı bağlam yükü. Yanılsama (hallucination) riski yüksek." : "Heavy context load. High risk of hallucination.";
       }
     });
 
-    // Slider 2: Temperature
+    // Slider 2
     const tempSlider = document.getElementById('tempSlider');
     const tempVal = document.getElementById('tempVal');
     const tempSample = document.getElementById('tempSample');
@@ -453,57 +548,25 @@
       tempVal.textContent = val.toFixed(1);
 
       if (val <= 0.3) {
-        tempSample.textContent = currentLang === 'tr' ? '"Fransa\'nın başkenti Paris\'tir. Ülkenin finans ve kültür merkezidir."' : '"The capital of France is Paris. It is the center of finance and culture."';
-        tempUsage.textContent = currentLang === 'tr' ? 'Kullanım alanı: Kod yazımı, Matematik, Kesin Bilgi Çıkarımı.' : 'Best for: Code Generation, Math, Exact Extraction.';
+        tempSample.textContent = currentLang === 'tr' ? '"Fransa\'nın başkenti Paris\'tir."' : '"The capital of France is Paris."';
+        tempUsage.textContent = currentLang === 'tr' ? 'Kod yazımı ve Matematik için idealdir.' : 'Best for Code & Mathematics.';
       } else if (val <= 0.7) {
-        tempSample.textContent = currentLang === 'tr' ? '"Işık Şehri olarak bilinen Paris, Fransa\'nın sanat ve tarih dolu başkentidir."' : '"Paris, often called the City of Light, serves as France’s vibrant capital."';
-        tempUsage.textContent = currentLang === 'tr' ? 'Kullanım alanı: Genel Sohbet, Metin Özetleme, Makale Yazımı.' : 'Best for: General Chat, Summarization, Article Writing.';
+        tempSample.textContent = currentLang === 'tr' ? '"Işık Şehri olarak bilinen Paris, Fransa\'nın başkentidir."' : '"Paris, City of Light, is France capital."';
+        tempUsage.textContent = currentLang === 'tr' ? 'Genel sohbet ve makale yazımı için idealdir.' : 'Best for General Chat & Articles.';
       } else {
-        tempSample.textContent = currentLang === 'tr' ? '"Sen nehrinin kıyısında ışıkların dans ettiği hayal şehri Paris, bir rüya gibi yükselir..."' : '"Imagine a city where golden light dances on the Seine—Paris emerges as a canvas of dreams..."';
-        tempUsage.textContent = currentLang === 'tr' ? 'Kullanım alanı: Yaratıcı Yazarlık, Fikir Üretimi, Şiir, Hikaye.' : 'Best for: Creative Writing, Brainstorming, Poetry.';
+        tempSample.textContent = currentLang === 'tr' ? '"Sen nehrinin kıyısında ışıkların dans ettiği hayal şehri Paris..."' : '"Imagine a city where lights dance on the Seine..."';
+        tempUsage.textContent = currentLang === 'tr' ? 'Yaratıcı yazarlık ve şiir için idealdir.' : 'Best for Creative Writing & Poetry.';
       }
     });
 
-    // Slider 3: Quality Spectrum
-    const qualitySlider = document.getElementById('qualitySlider');
-    const qualityLabel = document.getElementById('qualityLabel');
-    const qualityOutput = document.getElementById('qualityOutput');
-
-    function updateQuality() {
-      const v = parseInt(qualitySlider.value);
-      if (v < 33) {
-        qualityLabel.textContent = currentLang === 'tr' ? "Seviye: Basit / Belirsiz" : "Level: Vague";
-        qualityOutput.innerHTML = `<span class="text-red-400">Transformers mimarisini anlat.</span>`;
-      } else if (v < 66) {
-        qualityLabel.textContent = currentLang === 'tr' ? "Seviye: Yapılandırılmış" : "Level: Basic Structured";
-        qualityOutput.innerHTML = `<span class="text-amber-400">Transformers mimarisini bilgisayar bilimleri öğrencisine 200 kelimede anlat.</span>`;
-      } else {
-        qualityLabel.textContent = currentLang === 'tr' ? "Seviye: Mühendislik Verilmiş" : "Level: Engineered Master";
-        qualityOutput.innerHTML = `<span class="text-emerald-400">[ROL] Kıdemli Yapay Zeka Mimarı.<br>[GÖREV] Attention mekanizmasını açıkla.<br>[HEDEF KİTLE] 1. Sınıf Öğrencileri.<br>[FORMAT] 3 madde halinde, karşılaştırma tablosu ile.<br>[KISITLAMA] Maksimum 120 kelime.</span>`;
-      }
-    }
-    qualitySlider.addEventListener('input', updateQuality);
-    updateQuality();
-
-    // Studio Input and Simulated Output
+    // Studio
     const roleInput = document.getElementById('roleInput');
     const taskInput = document.getElementById('taskInput');
     const constraintInput = document.getElementById('constraintInput');
     const tabCode = document.getElementById('tabCode');
-    const simulatedText = document.getElementById('simulatedText');
 
     function updateStudio() {
-      tabCode.innerHTML = `[ROL] ${roleInput.value}\n[GÖREV] ${taskInput.value}\n[KISITLAMALAR] ${constraintInput.value}`;
-      
-      simulatedText.innerHTML = `
-        <p class="font-bold text-amber-400">📌 ${roleInput.value} Yanıtı:</p>
-        <p class="text-slate-300 font-light">Belirttiğiniz kısıtlamalara (${constraintInput.value}) uygun olarak hazırlanan özet:</p>
-        <ul class="list-disc pl-5 space-y-1 text-slate-300 text-xs">
-          <li><strong>Bağlam Odaklılık:</strong> Attention, cümlenin her kelimesini aynı anda inceleyerek ilişkili sözcüklere ağırlık verir.</li>
-          <li><strong>Paralel İşleme:</strong> Eski modellere kıyasla tüm metni tek seferde işleyerek hızı artırır.</li>
-          <li><strong>Esnek Temsil:</strong> Uzun cümlelerde bile anlam kaybını ve kısıtlayıcı bilgi sıkışmasını engeller.</li>
-        </ul>
-      `;
+      tabCode.innerHTML = `[ROL] ${roleInput.value}<br>[GÖREV] ${taskInput.value}<br>[KISITLAMALAR] ${constraintInput.value}`;
     }
     [roleInput, taskInput, constraintInput].forEach(el => el.addEventListener('input', updateStudio));
     updateStudio();
@@ -512,56 +575,6 @@
       navigator.clipboard.writeText(tabCode.textContent);
       alert(currentLang === 'tr' ? 'Prompt Kopyalandı!' : 'Prompt Copied!');
     }
-
-    // Quiz Logic
-    function renderQuiz() {
-      const qTitle = document.getElementById('quizQuestion');
-      const qOptions = document.getElementById('quizOptions');
-      const qFeedback = document.getElementById('quizFeedback');
-
-      qOptions.innerHTML = '';
-      qFeedback.textContent = '';
-
-      const quizTR = {
-        question: "Transformer mimarisi eski Seq2Seq modellerindeki hangi temel kısıtlamayı çözmüştür?",
-        options: [
-          { text: "Bütün girdiyi tek bir sabit boyutlu vektöre sıkıştırma zorunluluğunu (Bottleneck)", correct: true },
-          { text: "Eğitim verilerine duyulan ihtiyacı tamamen ortadan kaldırması", correct: false },
-          { text: "Modellerin ekran kartı kullanmadan çalışmasını sağlaması", correct: false }
-        ]
-      };
-
-      const quizEN = {
-        question: "What main bottleneck of traditional Seq2Seq models did the Transformer architecture solve?",
-        options: [
-          { text: "Compressing all input tokens into a single fixed-size thought vector", correct: true },
-          { text: "Eliminating the need for large training datasets entirely", correct: false },
-          { text: "Running LLMs without GPU acceleration", correct: false }
-        ]
-      };
-
-      const qData = currentLang === 'tr' ? quizTR : quizEN;
-      qTitle.textContent = qData.question;
-
-      qData.options.forEach((opt) => {
-        const btn = document.createElement('button');
-        btn.className = 'p-4 rounded-xl text-left bg-slate-900 border border-white/10 text-xs font-medium hover:border-amber-500 transition text-slate-300';
-        btn.textContent = opt.text;
-        btn.onclick = () => {
-          if (opt.correct) {
-            btn.className = 'p-4 rounded-xl text-left bg-emerald-500/10 border border-emerald-500/50 text-emerald-400 text-xs font-bold';
-            qFeedback.textContent = currentLang === 'tr' ? 'Doğru! Attention mekanizması sabit vektör kısıtlamasını kaldırmıştır.' : 'Correct! Dynamic attention solved the fixed-vector size constraint.';
-            qFeedback.className = 'text-xs font-bold text-emerald-400 mt-2';
-          } else {
-            btn.className = 'p-4 rounded-xl text-left bg-rose-500/10 border border-rose-500/50 text-rose-400 text-xs font-bold';
-            qFeedback.textContent = currentLang === 'tr' ? 'Yanlış. Lütfen Attention bölümünü tekrar inceleyin.' : 'Incorrect. Try reviewing the attention section.';
-            qFeedback.className = 'text-xs font-bold text-rose-400 mt-2';
-          }
-        };
-        qOptions.appendChild(btn);
-      });
-    }
-    renderQuiz();
   </script>
 </body>
 </html>
