@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROMPTING · Executive Edition</title>
+  <title>PROMPTING · Interactive Lab Edition</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -27,132 +27,162 @@
     body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050608; color: #f3f4f6; }
     .gold-gradient { background: linear-gradient(135deg, #fff7ed 0%, #fde047 50%, #d97706 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .glass-card { background: rgba(18, 21, 32, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
-    .glass-card:hover { border-color: rgba(234, 179, 8, 0.3); transform: translateY(-3px); }
+    .glass-card:hover { border-color: rgba(234, 179, 8, 0.3); }
     .glow-effect { box-shadow: 0 0 50px -10px rgba(234, 179, 8, 0.15); }
+    input[type=range] { accent-color: #eab308; }
   </style>
 </head>
 <body class="selection:bg-yellow-500/30 selection:text-yellow-200">
 
-  <!-- Glow Backgrounds -->
+  <!-- Background Glow -->
   <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-amber-500/10 via-purple-500/5 to-transparent blur-[120px] pointer-events-none z-0"></div>
 
-  <!-- Header -->
+  <!-- Navigation -->
   <header class="sticky top-0 z-50 backdrop-blur-xl bg-luxury-900/70 border-b border-white/10">
     <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
       <div class="flex items-center gap-4">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-700 p-[1px] shadow-lg shadow-amber-500/20">
           <div class="w-full h-full bg-luxury-900 rounded-[11px] flex items-center justify-center font-serif text-amber-400 font-bold text-xl">P</div>
         </div>
-        <span class="font-extrabold tracking-widest text-xs uppercase bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">Prompting / Lab</span>
+        <span class="font-extrabold tracking-widest text-xs uppercase bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">Prompting / Interactive Lab</span>
       </div>
-      <nav class="hidden md:flex items-center gap-10 text-xs font-semibold tracking-widest uppercase text-slate-400">
-        <a href="#architecture" class="hover:text-amber-400 transition-colors">Architecture</a>
-        <a href="#attention" class="hover:text-amber-400 transition-colors">Attention</a>
-        <a href="#playground" class="hover:text-amber-400 transition-colors">Studio</a>
+      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-widest uppercase text-slate-400">
+        <a href="#simulators" class="hover:text-amber-400 transition-colors">Interactive Sliders</a>
+        <a href="#studio" class="hover:text-amber-400 transition-colors">Prompt Studio</a>
       </nav>
-      <div class="text-xs font-mono text-amber-400/80 bg-amber-400/5 border border-amber-400/20 px-4 py-2 rounded-full">
-        v2.4 EXECUTIVE EDITION
+      <div class="text-xs font-mono text-amber-400 bg-amber-400/10 border border-amber-400/20 px-4 py-2 rounded-full">
+        v3.0 INTERACTIVE ULTIMATE
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="relative pt-24 pb-20 px-6 z-10">
-    <div class="max-w-5xl mx-auto text-center space-y-8">
-      <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-amber-500/30 bg-amber-500/5 text-amber-300 text-xs tracking-widest uppercase font-semibold">
+  <section class="relative pt-20 pb-16 px-6 z-10 text-center">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-amber-500/30 bg-amber-500/5 text-amber-300 text-xs tracking-widest uppercase font-semibold">
         <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-        Master Class Edition
+        Interactive Learning Suite
       </div>
-      
-      <h1 class="text-5xl sm:text-7xl lg:text-8xl font-serif font-bold tracking-tight text-white leading-none">
-        The Art & Science of <br>
-        <span class="gold-gradient">Prompt Engineering</span>
+      <h1 class="text-5xl sm:text-7xl font-serif font-bold text-white">
+        Master LLM Mechanics <br>
+        <span class="gold-gradient">With Real-Time Sliders</span>
       </h1>
-      
-      <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
-        Shaping raw artificial intelligence into precise, powerful execution through advanced context design and attention weighting.
+      <p class="text-slate-400 text-lg font-light max-w-2xl mx-auto">
+        Adjust parameters, visually observe attention degradation, and master prompt engineering principles interactively.
       </p>
-
-      <div class="pt-6 flex flex-wrap justify-center gap-4">
-        <a href="#playground" class="px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-700 text-slate-950 font-bold text-sm tracking-wider uppercase hover:opacity-90 transition shadow-lg shadow-amber-500/25">
-          Launch Prompt Studio
-        </a>
-      </div>
     </div>
   </section>
 
-  <!-- Content Grid -->
   <main class="max-w-7xl mx-auto px-6 py-12 space-y-24 relative z-10">
 
-    <!-- Section 1: Architecture -->
-    <section id="architecture" class="space-y-10">
-      <div class="max-w-xl">
-        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest">01 / Foundation</span>
-        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">Core Prompting Pillars</h2>
+    <!-- INTERACTIVE SLIDERS SECTION -->
+    <section id="simulators" class="space-y-12">
+      <div class="border-l-4 border-amber-500 pl-4">
+        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest">Interactive Modules</span>
+        <h2 class="text-3xl font-serif font-bold text-white mt-1">LLM Parameter & Dynamics Sliders</h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="glass-card p-8 rounded-2xl transition-all duration-300">
-          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-bold mb-6">01</div>
-          <h3 class="text-xl font-bold text-white mb-3">System Persona</h3>
-          <p class="text-slate-400 text-sm font-light leading-relaxed">Assign explicit identities to narrow response probabilities toward domain-expert patterns.</p>
+      <div class="grid lg:grid-cols-2 gap-8">
+        
+        <!-- Slider 1: Context Length vs Attention Retention -->
+        <div class="glass-card p-8 rounded-3xl space-y-6">
+          <div class="flex justify-between items-center">
+            <h3 class="text-xl font-bold text-white">1. Context Window vs. Attention</h3>
+            <span class="text-xs font-mono bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full border border-amber-500/30" id="tokenVal">4,000 Tokens</span>
+          </div>
+          <p class="text-slate-400 text-sm">Slide to increase prompt length and observe how model attention retention behaves across large context windows ("Needle in a Haystack" effect).</p>
+
+          <input type="range" id="tokenSlider" min="1000" max="32000" step="1000" value="4000" class="w-full h-2 bg-luxury-900 rounded-lg appearance-none cursor-pointer">
+
+          <!-- Visual Bar Indicator -->
+          <div class="space-y-2">
+            <div class="flex justify-between text-xs font-mono text-slate-400">
+              <span>Attention Retention Index</span>
+              <span id="retentionVal" class="text-amber-400 font-bold">92%</span>
+            </div>
+            <div class="w-full h-4 bg-luxury-900 rounded-full overflow-hidden p-[2px] border border-white/10">
+              <div id="retentionBar" class="h-full bg-gradient-to-r from-emerald-500 to-amber-500 rounded-full transition-all duration-300" style="width: 92%;"></div>
+            </div>
+          </div>
+
+          <div class="p-4 bg-luxury-900/80 rounded-xl border border-white/10 text-xs font-mono text-slate-300" id="contextDesc">
+            Optimal context size. High precision retrieval for embedded facts.
+          </div>
         </div>
 
-        <div class="glass-card p-8 rounded-2xl transition-all duration-300">
-          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-bold mb-6">02</div>
-          <h3 class="text-xl font-bold text-white mb-3">Context Framing</h3>
-          <p class="text-slate-400 text-sm font-light leading-relaxed">Provide dynamic context and retrieve structural constraints to eliminate hallucinations.</p>
+        <!-- Slider 2: Temperature & Creativity -->
+        <div class="glass-card p-8 rounded-3xl space-y-6">
+          <div class="flex justify-between items-center">
+            <h3 class="text-xl font-bold text-white">2. Temperature (Creativity)</h3>
+            <span class="text-xs font-mono bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full border border-amber-500/30" id="tempVal">0.2</span>
+          </div>
+          <p class="text-slate-400 text-sm">Slide to adjust randomness. Low temperature produces deterministic answers; high temperature generates creative output.</p>
+
+          <input type="range" id="tempSlider" min="0" max="1" step="0.1" value="0.2" class="w-full h-2 bg-luxury-900 rounded-lg appearance-none cursor-pointer">
+
+          <div class="p-4 bg-luxury-900/80 rounded-xl border border-white/10 text-xs font-mono space-y-2">
+            <div class="text-slate-400 uppercase text-[10px] font-bold">Sample Response Behavior:</div>
+            <div id="tempSample" class="text-amber-300">
+              "The capital of France is Paris. It is the center of finance and culture."
+            </div>
+          </div>
+
+          <div class="text-xs text-slate-500 font-mono" id="tempUsage">
+            Best for: Code Generation, Math, Exact Extraction, SQL Queries.
+          </div>
         </div>
 
-        <div class="glass-card p-8 rounded-2xl transition-all duration-300">
-          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-bold mb-6">03</div>
-          <h3 class="text-xl font-bold text-white mb-3">Output Formatting</h3>
-          <p class="text-slate-400 text-sm font-light leading-relaxed">Dictate exact response syntax (JSON, Markdown Tables, or Executable Code) for automated pipelines.</p>
+      </div>
+
+      <!-- Slider 3: Comparison Slider (Vague vs Engineered Prompt) -->
+      <div class="glass-card p-8 rounded-3xl space-y-6 glow-effect">
+        <div class="flex justify-between items-center">
+          <div>
+            <h3 class="text-xl font-bold text-white">3. Prompt Quality Spectrum</h3>
+            <p class="text-slate-400 text-sm mt-1">Slide to compare a basic prompt versus an engineered master prompt.</p>
+          </div>
+          <span class="text-xs font-mono bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full border border-amber-500/30" id="qualityLabel">Level: Engineered</span>
+        </div>
+
+        <input type="range" id="qualitySlider" min="0" max="100" value="100" class="w-full h-2 bg-luxury-900 rounded-lg appearance-none cursor-pointer">
+
+        <div class="bg-black/90 p-6 rounded-2xl border border-white/10 font-mono text-sm leading-relaxed" id="qualityOutput">
+          <!-- Populated by JS -->
         </div>
       </div>
     </section>
 
-    <!-- Section 2: Interactive Studio (Playground) -->
-    <section id="playground" class="space-y-8">
-      <div class="max-w-xl">
-        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest">02 / Interactive Studio</span>
-        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">Prompt Optimization Suite</h2>
+    <!-- PROMPT STUDIO SECTION -->
+    <section id="studio" class="space-y-8">
+      <div class="border-l-4 border-amber-500 pl-4">
+        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest">Builder</span>
+        <h2 class="text-3xl font-serif font-bold text-white mt-1">Live Prompt Builder Studio</h2>
       </div>
 
-      <div class="glass-card p-8 rounded-3xl glow-effect grid lg:grid-cols-2 gap-8">
-        <!-- Controls -->
+      <div class="glass-card p-8 rounded-3xl grid lg:grid-cols-2 gap-8">
         <div class="space-y-6">
           <div>
-            <label class="block text-xs font-mono uppercase text-amber-400/80 mb-2">Role / System Context</label>
-            <input type="text" id="roleInput" value="Act as a Senior AI Solutions Architect." class="w-full bg-luxury-900 border border-white/10 rounded-xl p-4 text-sm text-slate-200 focus:outline-none focus:border-amber-500 transition">
+            <label class="block text-xs font-mono uppercase text-amber-400/80 mb-2">Role Definition</label>
+            <input type="text" id="roleInput" value="Act as a Senior AI Architect." class="w-full bg-luxury-900 border border-white/10 rounded-xl p-4 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
           </div>
           <div>
-            <label class="block text-xs font-mono uppercase text-amber-400/80 mb-2">Objective / Task</label>
-            <textarea id="taskInput" rows="3" class="w-full bg-luxury-900 border border-white/10 rounded-xl p-4 text-sm text-slate-200 focus:outline-none focus:border-amber-500 transition">Design a fault-tolerant microservices architecture pattern for high-frequency trading.</textarea>
+            <label class="block text-xs font-mono uppercase text-amber-400/80 mb-2">Objective</label>
+            <textarea id="taskInput" rows="3" class="w-full bg-luxury-900 border border-white/10 rounded-xl p-4 text-sm text-slate-200 focus:outline-none focus:border-amber-500">Explain Attention Mechanism in Transformers.</textarea>
           </div>
           <div>
-            <label class="block text-xs font-mono uppercase text-amber-400/80 mb-2">Strict Constraints</label>
-            <input type="text" id="constraintInput" value="Provide 3 bullet points, markdown table comparison, zero jargon." class="w-full bg-luxury-900 border border-white/10 rounded-xl p-4 text-sm text-slate-200 focus:outline-none focus:border-amber-500 transition">
+            <label class="block text-xs font-mono uppercase text-amber-400/80 mb-2">Output Constraints</label>
+            <input type="text" id="constraintInput" value="3 bullet points, zero jargon, max 120 words." class="w-full bg-luxury-900 border border-white/10 rounded-xl p-4 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
           </div>
         </div>
 
-        <!-- Terminal Preview -->
         <div class="flex flex-col h-full">
-          <div class="flex items-center justify-between bg-luxury-900/90 border border-white/10 border-b-0 px-4 py-3 rounded-t-xl">
-            <div class="flex items-center gap-2">
-              <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-              <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-              <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
-            </div>
-            <span class="text-xs font-mono text-slate-500">live_prompt_structure.prompt</span>
+          <div class="bg-luxury-900 border border-white/10 px-4 py-3 rounded-t-xl text-xs font-mono text-slate-400">
+            preview_prompt.txt
           </div>
-          
-          <div class="flex-1 bg-black/80 border border-white/10 p-6 font-mono text-xs text-amber-300/90 leading-relaxed overflow-x-auto rounded-b-xl" id="compiledPreview">
-            <!-- Compiled Output populated by JS -->
+          <div class="flex-1 bg-black/90 border border-white/10 p-6 font-mono text-xs text-amber-300 leading-relaxed rounded-b-xl" id="compiledPreview">
           </div>
-
-          <button onclick="copyToClipboard()" class="mt-4 py-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 font-bold text-xs uppercase tracking-widest hover:bg-amber-500/20 transition">
-            Copy Engineered Prompt
+          <button onclick="copyPrompt()" class="mt-4 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-700 text-slate-950 font-bold text-xs uppercase tracking-widest hover:opacity-90">
+            Copy Prompt
           </button>
         </div>
       </div>
@@ -160,37 +190,96 @@
 
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-white/10 mt-32 py-12 text-center text-xs font-mono text-slate-500">
-    PROMPTING LAB · EXECUTIVE EDITION
+  <footer class="border-t border-white/10 mt-24 py-8 text-center text-xs font-mono text-slate-500">
+    PROMPTING LAB · INTERACTIVE SLIDER EDITION
   </footer>
 
   <script>
+    // Slider 1 Logic: Token Context vs Retention
+    const tokenSlider = document.getElementById('tokenSlider');
+    const tokenVal = document.getElementById('tokenVal');
+    const retentionVal = document.getElementById('retentionVal');
+    const retentionBar = document.getElementById('retentionBar');
+    const contextDesc = document.getElementById('contextDesc');
+
+    tokenSlider.addEventListener('input', (e) => {
+      const tokens = parseInt(e.target.value);
+      tokenVal.textContent = tokens.toLocaleString() + " Tokens";
+      
+      let retention = Math.max(35, Math.round(100 - (tokens / 32000) * 55));
+      retentionVal.textContent = retention + "%";
+      retentionBar.style.width = retention + "%";
+
+      if (tokens < 8000) {
+        contextDesc.textContent = "Optimal context size. Extremely high precision retrieval for core facts.";
+        retentionBar.className = "h-full bg-gradient-to-r from-emerald-500 to-amber-500 rounded-full transition-all duration-300";
+      } else if (tokens < 20000) {
+        contextDesc.textContent = "Moderate context load. Minor risk of middle-context information loss ('Lost in the Middle').";
+        retentionBar.className = "h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full transition-all duration-300";
+      } else {
+        contextDesc.textContent = "Heavy context load. High probability of hallucination or key details being overlooked.";
+        retentionBar.className = "h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full transition-all duration-300";
+      }
+    });
+
+    // Slider 2 Logic: Temperature
+    const tempSlider = document.getElementById('tempSlider');
+    const tempVal = document.getElementById('tempVal');
+    const tempSample = document.getElementById('tempSample');
+    const tempUsage = document.getElementById('tempUsage');
+
+    tempSlider.addEventListener('input', (e) => {
+      const val = parseFloat(e.target.value);
+      tempVal.textContent = val.toFixed(1);
+
+      if (val <= 0.3) {
+        tempSample.textContent = '"The capital of France is Paris. It is the most populous city in France."';
+        tempUsage.textContent = 'Best for: Code Generation, Mathematics, Precise Q&A, SQL queries.';
+      } else if (val <= 0.7) {
+        tempSample.textContent = '"Paris, often called the City of Light, serves as France’s vibrant capital of art and culture."';
+        tempUsage.textContent = 'Best for: General Chat, Summarization, Article Drafting, Content Editing.';
+      } else {
+        tempSample.textContent = '"Imagine a city where golden light dances on the Seine—Paris emerges as a canvas of dreams..."';
+        tempUsage.textContent = 'Best for: Creative Writing, Brainstorming, Poetry, Roleplay scenarios.';
+      }
+    });
+
+    // Slider 3 Logic: Quality Spectrum
+    const qualitySlider = document.getElementById('qualitySlider');
+    const qualityLabel = document.getElementById('qualityLabel');
+    const qualityOutput = document.getElementById('qualityOutput');
+
+    function updateQuality() {
+      const v = parseInt(qualitySlider.value);
+      if (v < 33) {
+        qualityLabel.textContent = "Level: Vague Prompt";
+        qualityOutput.innerHTML = `<span class="text-red-400">Explain transformers.</span>`;
+      } else if (v < 66) {
+        qualityLabel.textContent = "Level: Basic Structured Prompt";
+        qualityOutput.innerHTML = `<span class="text-amber-400">Explain transformer architecture to CS students in under 200 words.</span>`;
+      } else {
+        qualityLabel.textContent = "Level: Engineered Master Prompt";
+        qualityOutput.innerHTML = `<span class="text-emerald-400">[ROLE] Act as a Senior AI Architect.<br>[TASK] Explain Transformer attention mechanisms.<br>[TARGET AUDIENCE] First-year CS Undergrads.<br>[FORMAT] 3 bullet points, markdown comparison table, no jargon.<br>[CONSTRAINTS] Maximum 150 words total.</span>`;
+      }
+    }
+    qualitySlider.addEventListener('input', updateQuality);
+    updateQuality();
+
+    // Prompt Builder Studio
     const roleInput = document.getElementById('roleInput');
     const taskInput = document.getElementById('taskInput');
     const constraintInput = document.getElementById('constraintInput');
     const compiledPreview = document.getElementById('compiledPreview');
 
     function updateStudio() {
-      compiledPreview.innerHTML = `
-<span class="text-slate-500"># SYSTEM DIRECTIVE</span>
-<span class="text-amber-400">[ROLE]</span> ${roleInput.value}
-
-<span class="text-slate-500"># TASK SCOPE</span>
-<span class="text-amber-400">[OBJECTIVE]</span> ${taskInput.value}
-
-<span class="text-slate-500"># CONSTRAINTS & FORMATTING</span>
-<span class="text-amber-400">[RULES]</span> ${constraintInput.value}
-      `.trim();
+      compiledPreview.innerHTML = `[ROLE] ${roleInput.value}\n[OBJECTIVE] ${taskInput.value}\n[RULES] ${constraintInput.value}`;
     }
-
     [roleInput, taskInput, constraintInput].forEach(el => el.addEventListener('input', updateStudio));
     updateStudio();
 
-    function copyToClipboard() {
-      const textToCopy = `[ROLE] ${roleInput.value}\n[OBJECTIVE] ${taskInput.value}\n[RULES] ${constraintInput.value}`;
-      navigator.clipboard.writeText(textToCopy);
-      alert('Prompt Copied to Clipboard!');
+    function copyPrompt() {
+      navigator.clipboard.writeText(compiledPreview.textContent);
+      alert('Prompt Copied!');
     }
   </script>
 </body>
