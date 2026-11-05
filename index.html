@@ -3,199 +3,664 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROMPTING · Interactive Lab Edition</title>
+  <title>PROMPTING · Ultra Luxury Masterclass & Live Interactive Studio</title>
+  
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            gold: { 300: '#fde047', 400: '#facc15', 500: '#eab308' },
-            luxury: { 900: '#090a0f', 800: '#121520', 700: '#1c2030' }
+            gold: { 300: '#fde047', 400: '#facc15', 500: '#eab308', 600: '#ca8a04' },
+            luxury: { 950: '#050608', 900: '#0b0d14', 850: '#111420', 800: '#171c2c', 700: '#232a40' }
           },
           fontFamily: {
             serif: ['Playfair Display', 'Georgia', 'serif'],
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace']
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace']
           }
         }
       }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050608; color: #f3f4f6; }
-    .gold-gradient { background: linear-gradient(135deg, #fff7ed 0%, #fde047 50%, #d97706 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .glass-card { background: rgba(18, 21, 32, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
-    .glass-card:hover { border-color: rgba(234, 179, 8, 0.3); }
-    .glow-effect { box-shadow: 0 0 50px -10px rgba(234, 179, 8, 0.15); }
-    input[type=range] { accent-color: #eab308; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #050608;
+      color: #f3f4f6;
+    }
+    code, pre, .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #fff7ed 0%, #facc15 50%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glass-card {
+      background: rgba(17, 20, 32, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(234, 179, 8, 0.3);
+    }
+    .glow-gold {
+      box-shadow: 0 0 50px -10px rgba(234, 179, 8, 0.15);
+    }
+    input[type=range] {
+      accent-color: #eab308;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050608;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #232a40;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #eab308;
+    }
   </style>
 </head>
-<body class="selection:bg-yellow-500/30 selection:text-yellow-200">
+<body class="selection:bg-amber-500/30 selection:text-amber-200 min-h-screen flex flex-col">
 
-  <!-- Background Glow -->
-  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-amber-500/10 via-purple-500/5 to-transparent blur-[120px] pointer-events-none z-0"></div>
+  <!-- Scroll Progress Indicator -->
+  <div id="scrollProgress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 z-50 transition-all duration-150 w-0"></div>
 
-  <!-- Navigation -->
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-luxury-900/70 border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-4">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-700 p-[1px] shadow-lg shadow-amber-500/20">
-          <div class="w-full h-full bg-luxury-900 rounded-[11px] flex items-center justify-center font-serif text-amber-400 font-bold text-xl">P</div>
+  <!-- Ambient Luxury Glow -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-gradient-to-b from-amber-500/10 via-purple-500/5 to-transparent blur-[140px] pointer-events-none z-0"></div>
+
+  <!-- Header Navigation -->
+  <header class="sticky top-0 z-40 backdrop-blur-xl bg-luxury-950/80 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3.5 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-700 p-[1px] shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+          <div class="w-full h-full bg-luxury-950 rounded-[11px] flex items-center justify-center font-serif text-amber-400 font-bold text-xl">
+            P
+          </div>
         </div>
-        <span class="font-extrabold tracking-widest text-xs uppercase bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">Prompting / Interactive Lab</span>
-      </div>
+        <div>
+          <div class="font-extrabold tracking-widest text-sm uppercase bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+            Prompting <span class="text-amber-400">Studio</span>
+          </div>
+          <div class="text-[10px] font-mono text-slate-500 tracking-wider">ULTRA LUXURY MASTERCLASS</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-widest uppercase text-slate-400">
-        <a href="#simulators" class="hover:text-amber-400 transition-colors">Interactive Sliders</a>
-        <a href="#studio" class="hover:text-amber-400 transition-colors">Prompt Studio</a>
+        <a href="#studio" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i> Studio</a>
+        <a href="#simulators" class="hover:text-amber-400 transition-colors">Sliders</a>
+        <a href="#theory" class="hover:text-amber-400 transition-colors">Theory</a>
+        <a href="#attention-sec" class="hover:text-amber-400 transition-colors">Attention</a>
+        <a href="#quiz" class="hover:text-amber-400 transition-colors">Quiz</a>
       </nav>
-      <div class="text-xs font-mono text-amber-400 bg-amber-400/10 border border-amber-400/20 px-4 py-2 rounded-full">
-        v3.0 INTERACTIVE ULTIMATE
+
+      <!-- CTA -->
+      <div class="flex items-center gap-3">
+        <a href="#studio" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-700 text-slate-950 font-bold text-xs uppercase tracking-wider hover:opacity-90 transition shadow-lg shadow-amber-500/20">
+          <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i> Open Studio
+        </a>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="relative pt-20 pb-16 px-6 z-10 text-center">
-    <div class="max-w-4xl mx-auto space-y-6">
+  <section id="top" class="relative pt-20 pb-16 px-6 z-10 border-b border-white/5">
+    <div class="max-w-5xl mx-auto text-center space-y-6">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-amber-500/30 bg-amber-500/5 text-amber-300 text-xs tracking-widest uppercase font-semibold">
         <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-        Interactive Learning Suite
+        Interactive Masterclass & Live Preview Lab
       </div>
-      <h1 class="text-5xl sm:text-7xl font-serif font-bold text-white">
-        Master LLM Mechanics <br>
-        <span class="gold-gradient">With Real-Time Sliders</span>
+
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight">
+        Mastering Artificial Intelligence Through <br>
+        <span class="gold-gradient">Prompt Engineering</span>
       </h1>
-      <p class="text-slate-400 text-lg font-light max-w-2xl mx-auto">
-        Adjust parameters, visually observe attention degradation, and master prompt engineering principles interactively.
+
+      <p class="text-slate-400 text-base sm:text-lg font-light max-w-3xl mx-auto leading-relaxed">
+        Step into the ultimate prompt engineering environment. Design role directives, set formatting constraints, visually inspect self-attention weights, and evaluate live response previews in real time.
       </p>
+
+      <div class="pt-4 flex flex-wrap justify-center gap-4">
+        <a href="#studio" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-700 text-slate-950 font-bold text-xs uppercase tracking-widest hover:opacity-90 transition shadow-lg shadow-amber-500/25 flex items-center gap-2">
+          <i data-lucide="sliders" class="w-4 h-4"></i> Live Studio & Preview
+        </a>
+        <a href="#simulators" class="px-7 py-3.5 rounded-xl glass-card text-slate-200 font-bold text-xs uppercase tracking-widest hover:bg-white/5 transition flex items-center gap-2">
+          <i data-lucide="gauge" class="w-4 h-4 text-amber-400"></i> Dynamic Parameter Sliders
+        </a>
+      </div>
     </div>
   </section>
 
-  <main class="max-w-7xl mx-auto px-6 py-12 space-y-24 relative z-10">
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-6 py-12 space-y-28 relative z-10 flex-1">
 
-    <!-- INTERACTIVE SLIDERS SECTION -->
-    <section id="simulators" class="space-y-12">
+    <!-- ==========================================
+         SECTION 1: LIVE PROMPT STUDIO & PREVIEW
+         ========================================== -->
+    <section id="studio" class="scroll-mt-24 space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-l-4 border-amber-500 pl-4">
+        <div>
+          <span class="text-xs font-mono text-amber-400 uppercase tracking-widest">Interactive Workbench</span>
+          <h2 class="text-3xl font-serif font-bold text-white mt-1">Live Prompt Engineering Studio</h2>
+          <p class="text-slate-400 text-sm mt-1">Configure your prompt parameters on the left and see instant rendered preview on the right.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="loadPreset('technical')" class="px-3 py-1.5 rounded-lg bg-luxury-850 hover:bg-luxury-800 text-xs font-mono text-amber-300 border border-white/10 transition">Technical Preset</button>
+          <button onclick="loadPreset('executive')" class="px-3 py-1.5 rounded-lg bg-luxury-850 hover:bg-luxury-800 text-xs font-mono text-amber-300 border border-white/10 transition">Executive Preset</button>
+          <button onclick="loadPreset('creative')" class="px-3 py-1.5 rounded-lg bg-luxury-850 hover:bg-luxury-800 text-xs font-mono text-amber-300 border border-white/10 transition">Creative Preset</button>
+        </div>
+      </div>
+
+      <!-- Studio Grid Split View -->
+      <div class="glass-card p-6 sm:p-8 rounded-3xl glow-gold grid lg:grid-cols-12 gap-8">
+        
+        <!-- Controls Column (Left) -->
+        <div class="lg:col-span-6 space-y-5">
+          <div class="flex items-center justify-between border-b border-white/10 pb-3">
+            <span class="text-xs font-mono font-bold uppercase text-amber-400 flex items-center gap-2">
+              <i data-lucide="settings-2" class="w-4 h-4"></i> Prompt Controls & Context
+            </span>
+            <span class="text-[10px] font-mono text-slate-500">Inputs Auto-Compile</span>
+          </div>
+
+          <!-- Persona / Role -->
+          <div>
+            <label class="block text-xs font-mono uppercase text-slate-400 mb-1.5">1. System Persona / Role Directive</label>
+            <input type="text" id="studioRole" value="Act as a Senior AI Architect & Educator." class="w-full bg-luxury-950 border border-white/10 rounded-xl p-3.5 text-sm text-slate-200 focus:outline-none focus:border-amber-500 transition font-mono">
+          </div>
+
+          <!-- Core Task -->
+          <div>
+            <label class="block text-xs font-mono uppercase text-slate-400 mb-1.5">2. Objective / Task Instruction</label>
+            <textarea id="studioTask" rows="3" class="w-full bg-luxury-950 border border-white/10 rounded-xl p-3.5 text-sm text-slate-200 focus:outline-none focus:border-amber-500 transition font-mono">Explain how Self-Attention eliminates Seq2Seq context bottlenecks.</textarea>
+          </div>
+
+          <!-- Context Data -->
+          <div>
+            <label class="block text-xs font-mono uppercase text-slate-400 mb-1.5">3. Reference Context / Facts</label>
+            <textarea id="studioContext" rows="2" class="w-full bg-luxury-950 border border-white/10 rounded-xl p-3.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500 transition font-mono">Reference: 2017 Transformer paper 'Attention Is All You Need' by Vaswani et al. Traditional LSTMs compressed sequences into 1 fixed vector.</textarea>
+          </div>
+
+          <!-- Few Shot Examples -->
+          <div>
+            <label class="block text-xs font-mono uppercase text-slate-400 mb-1.5">4. Few-Shot Exemplar (Optional)</label>
+            <input type="text" id="studioFewShot" value="Example: Concept -> Analogy -> Table -> Takeaway." class="w-full bg-luxury-950 border border-white/10 rounded-xl p-3 text-xs text-slate-200 focus:outline-none focus:border-amber-500 transition font-mono">
+          </div>
+
+          <!-- Formatting Constraints -->
+          <div>
+            <label class="block text-xs font-mono uppercase text-slate-400 mb-1.5">5. Format & Strict Constraints</label>
+            <input type="text" id="studioConstraint" value="Use Markdown headers, 3 bullet points, and 1 comparison table. Under 180 words." class="w-full bg-luxury-950 border border-white/10 rounded-xl p-3 text-xs text-slate-200 focus:outline-none focus:border-amber-500 transition font-mono">
+          </div>
+        </div>
+
+        <!-- Live Preview Column (Right) -->
+        <div class="lg:col-span-6 flex flex-col h-full space-y-3">
+          
+          <!-- Preview Tabs Header -->
+          <div class="flex items-center justify-between bg-luxury-950 border border-white/10 px-4 py-2.5 rounded-xl">
+            <div class="flex items-center gap-2">
+              <button id="tabRawBtn" onclick="switchPreviewTab('raw')" class="px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                Raw Prompt View
+              </button>
+              <button id="tabOutputBtn" onclick="switchPreviewTab('output')" class="px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition text-slate-400 hover:text-white">
+                Simulated AI Output (Ön İzleme)
+              </button>
+            </div>
+            <button onclick="copyPromptText()" class="text-xs font-mono bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy
+            </button>
+          </div>
+
+          <!-- Tab Content 1: Compiled Raw Prompt -->
+          <div id="previewRawContainer" class="flex-1 bg-black/90 border border-white/10 p-5 font-mono text-xs text-amber-300/90 leading-relaxed overflow-y-auto rounded-xl min-h-[350px]">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Tab Content 2: Simulated AI Response -->
+          <div id="previewOutputContainer" class="hidden flex-1 bg-luxury-950 border border-white/10 p-6 text-slate-200 text-sm leading-relaxed overflow-y-auto rounded-xl min-h-[350px] space-y-4">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div class="text-[11px] font-mono text-slate-500 flex items-center justify-between">
+            <span>Status: Ready & Synchronized</span>
+            <span id="charCount">0 characters</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: DYNAMIC SLIDERS & SIMULATORS
+         ========================================== -->
+    <section id="simulators" class="scroll-mt-24 space-y-10">
       <div class="border-l-4 border-amber-500 pl-4">
-        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest">Interactive Modules</span>
-        <h2 class="text-3xl font-serif font-bold text-white mt-1">LLM Parameter & Dynamics Sliders</h2>
+        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest">Interactive Dynamics</span>
+        <h2 class="text-3xl font-serif font-bold text-white mt-1">LLM Hyperparameter & Behavior Sliders</h2>
+        <p class="text-slate-400 text-sm mt-1">Adjust core mechanics below to see visual context degradation, temperature shifts, and prompt quality spectrums.</p>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-8">
         
-        <!-- Slider 1: Context Length vs Attention Retention -->
-        <div class="glass-card p-8 rounded-3xl space-y-6">
+        <!-- Slider 1: Context Window & Attention Retention -->
+        <div class="glass-card p-7 rounded-3xl space-y-6">
           <div class="flex justify-between items-center">
-            <h3 class="text-xl font-bold text-white">1. Context Window vs. Attention</h3>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i data-lucide="cpu" class="w-5 h-5 text-amber-400"></i> 1. Context Window vs. Retention
+            </h3>
             <span class="text-xs font-mono bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full border border-amber-500/30" id="tokenVal">4,000 Tokens</span>
           </div>
-          <p class="text-slate-400 text-sm">Slide to increase prompt length and observe how model attention retention behaves across large context windows ("Needle in a Haystack" effect).</p>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Drag the slider to increase prompt size. Watch how information loss and attention decay increase across large context windows ("Needle in a Haystack" phenomenon).
+          </p>
 
-          <input type="range" id="tokenSlider" min="1000" max="32000" step="1000" value="4000" class="w-full h-2 bg-luxury-900 rounded-lg appearance-none cursor-pointer">
+          <input type="range" id="tokenSlider" min="1000" max="128000" step="1000" value="4000" class="w-full h-2 bg-luxury-950 rounded-lg appearance-none cursor-pointer">
 
-          <!-- Visual Bar Indicator -->
           <div class="space-y-2">
-            <div class="flex justify-between text-xs font-mono text-slate-400">
-              <span>Attention Retention Index</span>
-              <span id="retentionVal" class="text-amber-400 font-bold">92%</span>
+            <div class="flex justify-between text-xs font-mono">
+              <span class="text-slate-400">Attention Retention Metric</span>
+              <span id="retentionVal" class="text-amber-400 font-bold">96%</span>
             </div>
-            <div class="w-full h-4 bg-luxury-900 rounded-full overflow-hidden p-[2px] border border-white/10">
-              <div id="retentionBar" class="h-full bg-gradient-to-r from-emerald-500 to-amber-500 rounded-full transition-all duration-300" style="width: 92%;"></div>
+            <div class="w-full h-3 bg-luxury-950 rounded-full overflow-hidden p-[2px] border border-white/10">
+              <div id="retentionBar" class="h-full bg-gradient-to-r from-emerald-500 to-amber-500 rounded-full transition-all duration-300" style="width: 96%;"></div>
             </div>
           </div>
 
-          <div class="p-4 bg-luxury-900/80 rounded-xl border border-white/10 text-xs font-mono text-slate-300" id="contextDesc">
-            Optimal context size. High precision retrieval for embedded facts.
+          <div id="contextDesc" class="p-4 bg-luxury-950 rounded-xl border border-white/10 text-xs font-mono text-slate-300">
+            Optimal context window. Precise key-value retrieval across all prompt layers.
           </div>
         </div>
 
-        <!-- Slider 2: Temperature & Creativity -->
-        <div class="glass-card p-8 rounded-3xl space-y-6">
+        <!-- Slider 2: Temperature Slider -->
+        <div class="glass-card p-7 rounded-3xl space-y-6">
           <div class="flex justify-between items-center">
-            <h3 class="text-xl font-bold text-white">2. Temperature (Creativity)</h3>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i data-lucide="thermometer" class="w-5 h-5 text-amber-400"></i> 2. Temperature (Randomness)
+            </h3>
             <span class="text-xs font-mono bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full border border-amber-500/30" id="tempVal">0.2</span>
           </div>
-          <p class="text-slate-400 text-sm">Slide to adjust randomness. Low temperature produces deterministic answers; high temperature generates creative output.</p>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Adjust temperature from 0.0 (deterministic/focused) to 1.0 (creative/unpredictable).
+          </p>
 
-          <input type="range" id="tempSlider" min="0" max="1" step="0.1" value="0.2" class="w-full h-2 bg-luxury-900 rounded-lg appearance-none cursor-pointer">
+          <input type="range" id="tempSlider" min="0" max="1" step="0.1" value="0.2" class="w-full h-2 bg-luxury-950 rounded-lg appearance-none cursor-pointer">
 
-          <div class="p-4 bg-luxury-900/80 rounded-xl border border-white/10 text-xs font-mono space-y-2">
-            <div class="text-slate-400 uppercase text-[10px] font-bold">Sample Response Behavior:</div>
-            <div id="tempSample" class="text-amber-300">
+          <div class="p-4 bg-luxury-950 rounded-xl border border-white/10 space-y-2 font-mono text-xs">
+            <div class="text-slate-500 uppercase text-[10px] font-bold">Simulated Model Output Behavior:</div>
+            <div id="tempSample" class="text-amber-300 font-medium leading-relaxed">
               "The capital of France is Paris. It is the center of finance and culture."
             </div>
           </div>
 
-          <div class="text-xs text-slate-500 font-mono" id="tempUsage">
-            Best for: Code Generation, Math, Exact Extraction, SQL Queries.
+          <div id="tempUsage" class="text-xs font-mono text-slate-400">
+            Recommended Use-Case: Code Generation, Exact Math, SQL Extraction, Structured JSON.
           </div>
         </div>
 
       </div>
 
-      <!-- Slider 3: Comparison Slider (Vague vs Engineered Prompt) -->
-      <div class="glass-card p-8 rounded-3xl space-y-6 glow-effect">
-        <div class="flex justify-between items-center">
+      <!-- Slider 3: Prompt Quality Spectrum -->
+      <div class="glass-card p-8 rounded-3xl space-y-6 glow-gold">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <h3 class="text-xl font-bold text-white">3. Prompt Quality Spectrum</h3>
-            <p class="text-slate-400 text-sm mt-1">Slide to compare a basic prompt versus an engineered master prompt.</p>
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <i data-lucide="sliders-horizontal" class="w-5 h-5 text-amber-400"></i> 3. Prompt Quality & Engineering Spectrum
+            </h3>
+            <p class="text-slate-400 text-xs mt-1">Slide to compare outputs from a vague prompt vs a structured master prompt.</p>
           </div>
-          <span class="text-xs font-mono bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full border border-amber-500/30" id="qualityLabel">Level: Engineered</span>
+          <span class="text-xs font-mono bg-amber-500/20 text-amber-300 px-4 py-1.5 rounded-full border border-amber-500/30 w-fit" id="qualityLabel">
+            Level: Master Engineered
+          </span>
         </div>
 
-        <input type="range" id="qualitySlider" min="0" max="100" value="100" class="w-full h-2 bg-luxury-900 rounded-lg appearance-none cursor-pointer">
+        <input type="range" id="qualitySlider" min="0" max="100" value="100" class="w-full h-2.5 bg-luxury-950 rounded-lg appearance-none cursor-pointer">
 
-        <div class="bg-black/90 p-6 rounded-2xl border border-white/10 font-mono text-sm leading-relaxed" id="qualityOutput">
-          <!-- Populated by JS -->
+        <div id="qualityOutput" class="bg-black/90 p-6 rounded-2xl border border-white/10 font-mono text-xs leading-relaxed">
+          <!-- Rendered by JS -->
         </div>
       </div>
     </section>
 
-    <!-- PROMPT STUDIO SECTION -->
-    <section id="studio" class="space-y-8">
+    <!-- ==========================================
+         SECTION 3: ATTENTION MECHANISM INSPECTOR
+         ========================================== -->
+    <section id="attention-sec" class="scroll-mt-24 space-y-8">
       <div class="border-l-4 border-amber-500 pl-4">
-        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest">Builder</span>
-        <h2 class="text-3xl font-serif font-bold text-white mt-1">Live Prompt Builder Studio</h2>
+        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest">Transformer Deep Dive</span>
+        <h2 class="text-3xl font-serif font-bold text-white mt-1">Self-Attention Weight Visualizer</h2>
+        <p class="text-slate-400 text-sm mt-1">Click or hover over words below to inspect how multi-head self-attention assigns contextual weights.</p>
       </div>
 
-      <div class="glass-card p-8 rounded-3xl grid lg:grid-cols-2 gap-8">
-        <div class="space-y-6">
-          <div>
-            <label class="block text-xs font-mono uppercase text-amber-400/80 mb-2">Role Definition</label>
-            <input type="text" id="roleInput" value="Act as a Senior AI Architect." class="w-full bg-luxury-900 border border-white/10 rounded-xl p-4 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
-          </div>
-          <div>
-            <label class="block text-xs font-mono uppercase text-amber-400/80 mb-2">Objective</label>
-            <textarea id="taskInput" rows="3" class="w-full bg-luxury-900 border border-white/10 rounded-xl p-4 text-sm text-slate-200 focus:outline-none focus:border-amber-500">Explain Attention Mechanism in Transformers.</textarea>
-          </div>
-          <div>
-            <label class="block text-xs font-mono uppercase text-amber-400/80 mb-2">Output Constraints</label>
-            <input type="text" id="constraintInput" value="3 bullet points, zero jargon, max 120 words." class="w-full bg-luxury-900 border border-white/10 rounded-xl p-4 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+      <div class="glass-card p-8 rounded-3xl space-y-8">
+        <div class="space-y-3">
+          <span class="text-xs font-mono uppercase text-slate-400">Sample Sentence (Click Tokens to Inspect Weights):</span>
+          <div id="tokenContainer" class="flex flex-wrap gap-2.5">
+            <!-- Tokens injected by JS -->
           </div>
         </div>
 
-        <div class="flex flex-col h-full">
-          <div class="bg-luxury-900 border border-white/10 px-4 py-3 rounded-t-xl text-xs font-mono text-slate-400">
-            preview_prompt.txt
+        <div class="p-6 bg-luxury-950 rounded-2xl border border-white/10 space-y-3">
+          <div class="flex items-center justify-between border-b border-white/10 pb-2">
+            <span class="text-xs font-mono text-slate-400 uppercase">Attention Matrix Analysis</span>
+            <span id="selectedTokenLabel" class="text-xs font-mono text-amber-400 font-bold">Selected: "transformer"</span>
           </div>
-          <div class="flex-1 bg-black/90 border border-white/10 p-6 font-mono text-xs text-amber-300 leading-relaxed rounded-b-xl" id="compiledPreview">
+          <p id="attentionDesc" class="text-xs font-mono text-slate-300 leading-relaxed">
+            Target token "transformer" projects query vectors that connect strongly to "architecture" (35%) and "attention" (40%).
+          </p>
+          <div id="attentionScoreBars" class="flex flex-wrap gap-3 pt-2">
+            <!-- Dynamic Attention Score Badges -->
           </div>
-          <button onclick="copyPrompt()" class="mt-4 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-700 text-slate-950 font-bold text-xs uppercase tracking-widest hover:opacity-90">
-            Copy Prompt
-          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: THEORY & DOCUMENTATION
+         ========================================== -->
+    <section id="theory" class="scroll-mt-24 space-y-10">
+      <div class="border-l-4 border-amber-500 pl-4">
+        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest">Masterclass Knowledge</span>
+        <h2 class="text-3xl font-serif font-bold text-white mt-1">Foundational Architecture & Principles</h2>
+        <p class="text-slate-400 text-sm mt-1">Everything you need to know about the science of language models and prompt design.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="glass-card p-7 rounded-3xl space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono font-bold flex items-center justify-center">01</div>
+          <h3 class="text-lg font-serif font-bold text-white">Seq2Seq Bottlenecks</h3>
+          <p class="text-slate-400 text-xs leading-relaxed font-light">
+            Early RNN and LSTM translation architectures attempted to compress full paragraphs into a single static encoder vector. This bottleneck lost crucial details, names, and numbers in long sequences.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card p-7 rounded-3xl space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono font-bold flex items-center justify-center">02</div>
+          <h3 class="text-lg font-serif font-bold text-white">The Transformer Revolution</h3>
+          <p class="text-slate-400 text-xs leading-relaxed font-light">
+            Introduced in 2017 ("Attention Is All You Need"), Transformers abandoned recurrence completely. Parallelized self-attention allows tokens across the entire prompt to directly reference each other.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card p-7 rounded-3xl space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono font-bold flex items-center justify-center">03</div>
+          <h3 class="text-lg font-serif font-bold text-white">GPT Autoregressive Loop</h3>
+          <p class="text-slate-400 text-xs leading-relaxed font-light">
+            Generative Pre-trained Transformers predict text token by token. The prompt acts as the initial condition, narrowing down probability distributions to produce targeted answers.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: KNOWLEDGE QUIZ & GLOSSARY
+         ========================================== -->
+    <section id="quiz" class="scroll-mt-24 space-y-10">
+      <div class="border-l-4 border-amber-500 pl-4">
+        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest">Self Assessment</span>
+        <h2 class="text-3xl font-serif font-bold text-white mt-1">Interactive Quiz & Glossary</h2>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8">
+        <!-- Quiz -->
+        <div class="lg:col-span-7 glass-card p-8 rounded-3xl space-y-6">
+          <div class="flex items-center justify-between border-b border-white/10 pb-3">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i data-lucide="help-circle" class="w-5 h-5 text-amber-400"></i> Prompt Mastery Quiz
+            </h3>
+            <span id="quizScore" class="text-xs font-mono text-amber-300 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-full">Score: 0/2</span>
+          </div>
+
+          <div id="quizContainer" class="space-y-6">
+            <!-- Question 1 -->
+            <div class="space-y-3">
+              <p class="text-sm font-semibold text-white">Q1: What problem does the Self-Attention mechanism solve in Transformers?</p>
+              <div class="space-y-2">
+                <button onclick="answerQuiz(1, 'a', this)" class="w-full text-left p-3.5 rounded-xl bg-luxury-950 border border-white/10 text-xs text-slate-300 hover:border-amber-500 transition font-mono">
+                  A) It removes the need for GPU hardware during model training.
+                </button>
+                <button onclick="answerQuiz(1, 'b', this)" class="w-full text-left p-3.5 rounded-xl bg-luxury-950 border border-white/10 text-xs text-slate-300 hover:border-amber-500 transition font-mono">
+                  B) It eliminates the single fixed-vector bottleneck by dynamically weighing all tokens.
+                </button>
+              </div>
+              <p id="q1Feedback" class="text-xs font-mono hidden"></p>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="space-y-3 pt-4 border-t border-white/10">
+              <p class="text-sm font-semibold text-white">Q2: When generating deterministic code or SQL queries, what temperature should you use?</p>
+              <div class="space-y-2">
+                <button onclick="answerQuiz(2, 'a', this)" class="w-full text-left p-3.5 rounded-xl bg-luxury-950 border border-white/10 text-xs text-slate-300 hover:border-amber-500 transition font-mono">
+                  A) Low Temperature (e.g. 0.0 to 0.2) for low variance and high precision.
+                </button>
+                <button onclick="answerQuiz(2, 'b', this)" class="w-full text-left p-3.5 rounded-xl bg-luxury-950 border border-white/10 text-xs text-slate-300 hover:border-amber-500 transition font-mono">
+                  B) High Temperature (e.g. 0.9 to 1.0) for maximum random variation.
+                </button>
+              </div>
+              <p id="q2Feedback" class="text-xs font-mono hidden"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Glossary Accordion -->
+        <div class="lg:col-span-5 glass-card p-8 rounded-3xl space-y-4">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2 border-b border-white/10 pb-3">
+            <i data-lucide="book-open" class="w-5 h-5 text-amber-400"></i> Core Glossary
+          </h3>
+
+          <div class="space-y-3">
+            <details class="group bg-luxury-950 border border-white/10 rounded-xl">
+              <summary class="p-3.5 text-xs font-bold font-mono text-amber-300 cursor-pointer flex justify-between items-center">
+                Autoregressive Generation <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
+              </summary>
+              <p class="p-3.5 text-xs text-slate-400 border-t border-white/5 font-light">
+                Models predict text token by token, appending each output back into the input sequence for the next prediction step.
+              </p>
+            </details>
+
+            <details class="group bg-luxury-950 border border-white/10 rounded-xl">
+              <summary class="p-3.5 text-xs font-bold font-mono text-amber-300 cursor-pointer flex justify-between items-center">
+                Few-Shot Prompting <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
+              </summary>
+              <p class="p-3.5 text-xs text-slate-400 border-t border-white/5 font-light">
+                Providing one or more concrete input/output examples within the prompt to ground model behavior.
+              </p>
+            </details>
+
+            <details class="group bg-luxury-950 border border-white/10 rounded-xl">
+              <summary class="p-3.5 text-xs font-bold font-mono text-amber-300 cursor-pointer flex justify-between items-center">
+                Hallucination <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
+              </summary>
+              <p class="p-3.5 text-xs text-slate-400 border-t border-white/5 font-light">
+                When an LLM outputs syntactically plausible but factually incorrect statements due to unconstrained probability outputs.
+              </p>
+            </details>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-white/10 mt-24 py-8 text-center text-xs font-mono text-slate-500">
-    PROMPTING LAB · INTERACTIVE SLIDER EDITION
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-10 bg-luxury-950">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+      <div>PROMPTING MASTERCLASS & STUDIO · ULTRA LUXURY EDITION</div>
+      <a href="#top" class="text-amber-400 hover:underline flex items-center gap-1">Back to Top ↑</a>
+    </div>
   </footer>
 
+  <!-- ==========================================
+       JAVASCRIPT LOGIC & INTERACTIVITIES
+       ========================================== -->
   <script>
-    // Slider 1 Logic: Token Context vs Retention
+    // Initialize Icons
+    lucide.createIcons();
+
+    // Reading Scroll Progress
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('scrollProgress').style.width = scrolled + '%';
+    });
+
+    // ------------------------------------------
+    // STUDIO & LIVE PREVIEW LOGIC
+    // ------------------------------------------
+    const studioRole = document.getElementById('studioRole');
+    const studioTask = document.getElementById('studioTask');
+    const studioContext = document.getElementById('studioContext');
+    const studioFewShot = document.getElementById('studioFewShot');
+    const studioConstraint = document.getElementById('studioConstraint');
+    const previewRawContainer = document.getElementById('previewRawContainer');
+    const previewOutputContainer = document.getElementById('previewOutputContainer');
+    const charCount = document.getElementById('charCount');
+
+    let currentTab = 'raw';
+
+    function compilePrompt() {
+      const role = studioRole.value.trim();
+      const task = studioTask.value.trim();
+      const context = studioContext.value.trim();
+      const fewshot = studioFewShot.value.trim();
+      const constraint = studioConstraint.value.trim();
+
+      // Raw Prompt Formatting
+      const rawText = `[SYSTEM ROLE]
+${role}
+
+[OBJECTIVE & TASK]
+${task}
+
+[REFERENCE CONTEXT]
+${context}
+
+[EXEMPLAR / FEW-SHOT]
+${fewshot}
+
+[FORMATTING CONSTRAINTS]
+${constraint}`;
+
+      previewRawContainer.textContent = rawText;
+      charCount.textContent = `${rawText.length} characters`;
+
+      // Simulated AI Response (Ön İzleme Output)
+      previewOutputContainer.innerHTML = `
+        <div class="border-b border-white/10 pb-3 mb-3">
+          <span class="text-xs font-mono text-amber-400 font-bold uppercase">Simulated LLM Output Preview</span>
+        </div>
+        <h3 class="text-base font-bold text-white font-serif">Executive Overview: ${task}</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          As instructed by the <strong>${role}</strong>, here is the structured analysis based on the provided reference context:
+        </p>
+        <ul class="list-disc list-inside text-xs text-slate-300 space-y-1.5 pl-2">
+          <li><strong>Seq2Seq Limits:</strong> Traditional LSTMs squeezed paragraphs into a single vector, causing information degradation.</li>
+          <li><strong>Self-Attention Solution:</strong> The 2017 Transformer architecture computes dynamic pair-wise token weights.</li>
+          <li><strong>Practical Outcome:</strong> Enables contextual recall across extended prompt context windows.</li>
+        </ul>
+        <div class="overflow-x-auto pt-2">
+          <table class="w-full text-xs text-left border-collapse border border-white/10">
+            <thead>
+              <tr class="bg-luxury-850 text-amber-300 font-mono">
+                <th class="p-2 border border-white/10">Architecture</th>
+                <th class="p-2 border border-white/10">Context Mechanism</th>
+                <th class="p-2 border border-white/10">Bottleneck</th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-300">
+              <tr>
+                <td class="p-2 border border-white/10 font-bold">RNN / LSTM</td>
+                <td class="p-2 border border-white/10">Single Fixed Vector</td>
+                <td class="p-2 border border-white/10 text-rose-400">High (Loss of facts)</td>
+              </tr>
+              <tr>
+                <td class="p-2 border border-white/10 font-bold">Transformer</td>
+                <td class="p-2 border border-white/10">Self-Attention Matrix</td>
+                <td class="p-2 border border-white/10 text-emerald-400">None (Dynamic weights)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    [studioRole, studioTask, studioContext, studioFewShot, studioConstraint].forEach(el => {
+      el.addEventListener('input', compilePrompt);
+    });
+    compilePrompt();
+
+    function switchPreviewTab(tab) {
+      currentTab = tab;
+      const rawBtn = document.getElementById('tabRawBtn');
+      const outputBtn = document.getElementById('tabOutputBtn');
+
+      if (tab === 'raw') {
+        previewRawContainer.classList.remove('hidden');
+        previewOutputContainer.classList.add('hidden');
+        rawBtn.className = "px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition bg-amber-500/20 text-amber-300 border border-amber-500/30";
+        outputBtn.className = "px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition text-slate-400 hover:text-white";
+      } else {
+        previewRawContainer.classList.add('hidden');
+        previewOutputContainer.classList.remove('hidden');
+        outputBtn.className = "px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition bg-amber-500/20 text-amber-300 border border-amber-500/30";
+        rawBtn.className = "px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition text-slate-400 hover:text-white";
+      }
+    }
+
+    function copyPromptText() {
+      navigator.clipboard.writeText(previewRawContainer.textContent);
+      alert('Prompt copied to clipboard!');
+    }
+
+    function loadPreset(type) {
+      if (type === 'technical') {
+        studioRole.value = "Act as a Senior Cloud Solutions Architect.";
+        studioTask.value = "Compare Microservices vs Monolith architectures for high-frequency trading.";
+        studioContext.value = "Target latency: < 5ms. System volume: 100,000 requests/sec.";
+        studioFewShot.value = "Format: 1. Executive Summary, 2. Metrics Table, 3. Trade-offs.";
+        studioConstraint.value = "Use clean Markdown table, 3 bullet points, under 150 words.";
+      } else if (type === 'executive') {
+        studioRole.value = "Act as a Chief Technology Officer (CTO).";
+        studioTask.value = "Draft an executive summary on adopting LLMs in enterprise operations.";
+        studioContext.value = "Budget: $500k. Timeline: Q3 2026. Expected ROI: 25% efficiency gain.";
+        studioFewShot.value = "Format: Strategic Goal -> Key Risk -> Expected Metric.";
+        studioConstraint.value = "Max 100 words. Bullet points only. No technical jargon.";
+      } else if (type === 'creative') {
+        studioRole.value = "Act as an Award-Winning Sci-Fi Worldbuilder.";
+        studioTask.value = "Design a futuristic quantum computing facility hidden inside a comet.";
+        studioContext.value = "Location: Kuiper Belt. Cooling: Liquid helium vacuum loops.";
+        studioFewShot.value = "Tone: Atmospheric, immersive, cinematic.";
+        studioConstraint.value = "Use evocative prose, exactly 2 paragraphs.";
+      }
+      compilePrompt();
+    }
+
+    // ------------------------------------------
+    // DYNAMIC SLIDERS LOGIC
+    // ------------------------------------------
     const tokenSlider = document.getElementById('tokenSlider');
     const tokenVal = document.getElementById('tokenVal');
     const retentionVal = document.getElementById('retentionVal');
@@ -206,23 +671,22 @@
       const tokens = parseInt(e.target.value);
       tokenVal.textContent = tokens.toLocaleString() + " Tokens";
       
-      let retention = Math.max(35, Math.round(100 - (tokens / 32000) * 55));
+      let retention = Math.max(25, Math.round(100 - (tokens / 128000) * 65));
       retentionVal.textContent = retention + "%";
       retentionBar.style.width = retention + "%";
 
-      if (tokens < 8000) {
-        contextDesc.textContent = "Optimal context size. Extremely high precision retrieval for core facts.";
+      if (tokens <= 8000) {
+        contextDesc.textContent = "Optimal context window size. Extremely accurate token recall across all self-attention layers.";
         retentionBar.className = "h-full bg-gradient-to-r from-emerald-500 to-amber-500 rounded-full transition-all duration-300";
-      } else if (tokens < 20000) {
-        contextDesc.textContent = "Moderate context load. Minor risk of middle-context information loss ('Lost in the Middle').";
+      } else if (tokens <= 32000) {
+        contextDesc.textContent = "Moderate context load. Slight risk of information loss in middle position tokens ('Needle in a Haystack').";
         retentionBar.className = "h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full transition-all duration-300";
       } else {
-        contextDesc.textContent = "Heavy context load. High probability of hallucination or key details being overlooked.";
-        retentionBar.className = "h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full transition-all duration-300";
+        contextDesc.textContent = "Heavy context load. Noticeable attention decay. High chance of hallucinated facts or dropped constraints.";
+        retentionBar.className = "h-full bg-gradient-to-r from-orange-500 to-rose-600 rounded-full transition-all duration-300";
       }
     });
 
-    // Slider 2 Logic: Temperature
     const tempSlider = document.getElementById('tempSlider');
     const tempVal = document.getElementById('tempVal');
     const tempSample = document.getElementById('tempSample');
@@ -234,52 +698,131 @@
 
       if (val <= 0.3) {
         tempSample.textContent = '"The capital of France is Paris. It is the most populous city in France."';
-        tempUsage.textContent = 'Best for: Code Generation, Mathematics, Precise Q&A, SQL queries.';
+        tempUsage.textContent = 'Recommended Use-Case: Code Generation, Exact Math, SQL Extraction, Structured JSON.';
       } else if (val <= 0.7) {
-        tempSample.textContent = '"Paris, often called the City of Light, serves as France’s vibrant capital of art and culture."';
-        tempUsage.textContent = 'Best for: General Chat, Summarization, Article Drafting, Content Editing.';
+        tempSample.textContent = '"Paris, widely known as the City of Light, stands as France’s cultural and financial heart."';
+        tempUsage.textContent = 'Recommended Use-Case: General Summarization, Article Writing, Technical Documentation.';
       } else {
-        tempSample.textContent = '"Imagine a city where golden light dances on the Seine—Paris emerges as a canvas of dreams..."';
-        tempUsage.textContent = 'Best for: Creative Writing, Brainstorming, Poetry, Roleplay scenarios.';
+        tempSample.textContent = '"Imagine a glowing metropolis along the Seine—Paris emerges like a tapestry woven of historic dreams..."';
+        tempUsage.textContent = 'Recommended Use-Case: Creative Storytelling, Brainstorming, Novel Persona Roleplay.';
       }
     });
 
-    // Slider 3 Logic: Quality Spectrum
     const qualitySlider = document.getElementById('qualitySlider');
     const qualityLabel = document.getElementById('qualityLabel');
     const qualityOutput = document.getElementById('qualityOutput');
 
-    function updateQuality() {
+    function updateQualitySpectrum() {
       const v = parseInt(qualitySlider.value);
       if (v < 33) {
-        qualityLabel.textContent = "Level: Vague Prompt";
-        qualityOutput.innerHTML = `<span class="text-red-400">Explain transformers.</span>`;
+        qualityLabel.textContent = "Level: Naive / Vague Prompt";
+        qualityOutput.innerHTML = `
+          <div class="text-rose-400 uppercase font-bold mb-1">[INPUT PROMPT]</div>
+          <div class="text-slate-300 mb-3">Explain transformers.</div>
+          <div class="text-slate-500 italic border-t border-white/10 pt-2">Result: High risk of generic, unconstrained rambling response with unpredictable structure.</div>
+        `;
       } else if (v < 66) {
         qualityLabel.textContent = "Level: Basic Structured Prompt";
-        qualityOutput.innerHTML = `<span class="text-amber-400">Explain transformer architecture to CS students in under 200 words.</span>`;
+        qualityOutput.innerHTML = `
+          <div class="text-amber-400 uppercase font-bold mb-1">[INPUT PROMPT]</div>
+          <div class="text-slate-300 mb-3">Explain transformer architecture to CS students in under 200 words.</div>
+          <div class="text-slate-500 italic border-t border-white/10 pt-2">Result: Better focus and length control, but lacks explicit formatting rules and role directives.</div>
+        `;
       } else {
-        qualityLabel.textContent = "Level: Engineered Master Prompt";
-        qualityOutput.innerHTML = `<span class="text-emerald-400">[ROLE] Act as a Senior AI Architect.<br>[TASK] Explain Transformer attention mechanisms.<br>[TARGET AUDIENCE] First-year CS Undergrads.<br>[FORMAT] 3 bullet points, markdown comparison table, no jargon.<br>[CONSTRAINTS] Maximum 150 words total.</span>`;
+        qualityLabel.textContent = "Level: Master Engineered Prompt";
+        qualityOutput.innerHTML = `
+          <div class="text-emerald-400 uppercase font-bold mb-1">[INPUT PROMPT]</div>
+          <div class="text-slate-200 leading-relaxed">
+            <span class="text-amber-400">[ROLE]</span> Act as a Senior AI Architect.<br>
+            <span class="text-amber-400">[TASK]</span> Explain Transformer self-attention mechanism.<br>
+            <span class="text-amber-400">[AUDIENCE]</span> 1st year CS Undergrads.<br>
+            <span class="text-amber-400">[FORMAT]</span> 3 bullet points, 1 comparison table.<br>
+            <span class="text-amber-400">[CONSTRAINTS]</span> Max 150 words. Zero technical jargon without definitions.
+          </div>
+          <div class="text-emerald-400/80 italic border-t border-white/10 pt-2 mt-3">Result: Perfectly predictable, highly structured, zero-hallucination execution.</div>
+        `;
       }
     }
-    qualitySlider.addEventListener('input', updateQuality);
-    updateQuality();
+    qualitySlider.addEventListener('input', updateQualitySpectrum);
+    updateQualitySpectrum();
 
-    // Prompt Builder Studio
-    const roleInput = document.getElementById('roleInput');
-    const taskInput = document.getElementById('taskInput');
-    const constraintInput = document.getElementById('constraintInput');
-    const compiledPreview = document.getElementById('compiledPreview');
+    // ------------------------------------------
+    // ATTENTION INSPECTOR LOGIC
+    // ------------------------------------------
+    const sampleWords = ["The", "transformer", "architecture", "relies", "heavily", "on", "self-attention", "mechanisms."];
+    const attentionMatrix = {
+      "transformer": { "architecture": 35, "self-attention": 40, "mechanisms.": 15, "relies": 10 },
+      "self-attention": { "transformer": 45, "mechanisms.": 30, "relies": 15, "heavily": 10 },
+      "architecture": { "transformer": 50, "mechanisms.": 30, "relies": 20 }
+    };
 
-    function updateStudio() {
-      compiledPreview.innerHTML = `[ROLE] ${roleInput.value}\n[OBJECTIVE] ${taskInput.value}\n[RULES] ${constraintInput.value}`;
+    const tokenContainer = document.getElementById('tokenContainer');
+    const attentionDesc = document.getElementById('attentionDesc');
+    const selectedTokenLabel = document.getElementById('selectedTokenLabel');
+    const attentionScoreBars = document.getElementById('attentionScoreBars');
+
+    function renderAttentionTokens(activeWord = "transformer") {
+      tokenContainer.innerHTML = '';
+      sampleWords.forEach(word => {
+        const cleanWord = word.replace('.', '');
+        const btn = document.createElement('button');
+        const isActive = cleanWord === activeWord;
+
+        btn.className = `px-3.5 py-2 rounded-xl text-xs font-mono transition border ${
+          isActive 
+            ? 'bg-amber-500 text-slate-950 font-bold border-amber-400 shadow-md shadow-amber-500/20' 
+            : 'bg-luxury-950 text-slate-300 border-white/10 hover:border-amber-500'
+        }`;
+        btn.textContent = word;
+        btn.onclick = () => selectAttentionToken(cleanWord);
+        tokenContainer.appendChild(btn);
+      });
     }
-    [roleInput, taskInput, constraintInput].forEach(el => el.addEventListener('input', updateStudio));
-    updateStudio();
 
-    function copyPrompt() {
-      navigator.clipboard.writeText(compiledPreview.textContent);
-      alert('Prompt Copied!');
+    function selectAttentionToken(word) {
+      selectedTokenLabel.textContent = `Selected Token: "${word}"`;
+      renderAttentionTokens(word);
+
+      const weights = attentionMatrix[word] || { [word]: 60, "context": 40 };
+      attentionDesc.textContent = `Target token "${word}" computes Query-Key matrix dot products to weight relative context across adjacent sequence positions.`;
+
+      attentionScoreBars.innerHTML = '';
+      Object.keys(weights).forEach(target => {
+        const pct = weights[target];
+        const badge = document.createElement('div');
+        badge.className = 'flex items-center gap-2 bg-luxury-850 px-3 py-1.5 rounded-lg border border-white/10 text-xs font-mono';
+        badge.innerHTML = `<span class="text-amber-400 font-bold">${target}</span> <span class="text-slate-400">(${pct}%)</span>`;
+        attentionScoreBars.appendChild(badge);
+      });
+    }
+    renderAttentionTokens("transformer");
+    selectAttentionToken("transformer");
+
+    // ------------------------------------------
+    // QUIZ LOGIC
+    // ------------------------------------------
+    let currentScore = 0;
+    const answered = { 1: false, 2: false };
+
+    function answerQuiz(qNum, choice, el) {
+      if (answered[qNum]) return;
+      answered[qNum] = true;
+
+      const feedback = document.getElementById(`q${qNum}Feedback`);
+      feedback.classList.remove('hidden');
+
+      if ((qNum === 1 && choice === 'b') || (qNum === 2 && choice === 'a')) {
+        currentScore++;
+        feedback.className = "text-xs font-mono text-emerald-400 font-bold mt-2";
+        feedback.textContent = "✓ Correct! Dynamic self-attention resolves static vector memory limits.";
+        el.classList.add('border-emerald-500', 'bg-emerald-500/10');
+      } else {
+        feedback.className = "text-xs font-mono text-rose-400 font-bold mt-2";
+        feedback.textContent = "✗ Incorrect. Review the section above for details.";
+        el.classList.add('border-rose-500', 'bg-rose-500/10');
+      }
+
+      document.getElementById('quizScore').textContent = `Score: ${currentScore}/2`;
     }
   </script>
 </body>
